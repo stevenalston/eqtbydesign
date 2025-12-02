@@ -45,20 +45,177 @@ export default function Navigation() {
           {/* Logo */}
           <motion.div
             className="flex-shrink-0"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-warm rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">E</span>
+            <Link href="/" className="flex items-center space-x-3 group">
+              {/* Hexagon Logo Container */}
+              <div className="relative" style={{ width: '56px', height: '56px' }}>
+                {/* SVG for all hexagon elements */}
+                <svg
+                  className="absolute inset-0 w-full h-full"
+                  viewBox="0 0 56 56"
+                  fill="none"
+                >
+                  <defs>
+                    <linearGradient id="navHexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#E07A5F" />
+                      <stop offset="100%" stopColor="#F4A261" />
+                    </linearGradient>
+                  </defs>
+
+                  {/* Outer hexagon outline (frame) - larger radius */}
+                  {(() => {
+                    const centerX = 28;
+                    const centerY = 28;
+                    const outerRadius = 26;
+                    const innerRadius = 18;
+                    const angles = [0, 60, 120, 180, 240, 300];
+
+                    // Calculate outer hexagon points
+                    const outerPoints = angles.map((angle) => {
+                      const radians = (angle - 90) * (Math.PI / 180);
+                      return {
+                        x: centerX + Math.cos(radians) * outerRadius,
+                        y: centerY + Math.sin(radians) * outerRadius,
+                      };
+                    });
+
+                    // Calculate inner hexagon points
+                    const innerPoints = angles.map((angle) => {
+                      const radians = (angle - 90) * (Math.PI / 180);
+                      return {
+                        x: centerX + Math.cos(radians) * innerRadius,
+                        y: centerY + Math.sin(radians) * innerRadius,
+                      };
+                    });
+
+                    const outerPathD = outerPoints.map((point, i) =>
+                      `${i === 0 ? 'M' : 'L'} ${point.x} ${point.y}`
+                    ).join(' ') + ' Z';
+
+                    const innerPathD = innerPoints.map((point, i) =>
+                      `${i === 0 ? 'M' : 'L'} ${point.x} ${point.y}`
+                    ).join(' ') + ' Z';
+
+                    return (
+                      <>
+                        {/* Outer hexagon - subtle background stroke */}
+                        <motion.path
+                          d={outerPathD}
+                          className={isScrolled ? 'stroke-terracotta/20' : 'stroke-white/20'}
+                          strokeWidth="1.5"
+                          fill="none"
+                          initial={{ pathLength: 0 }}
+                          animate={{ pathLength: 1 }}
+                          transition={{ duration: 1.5, delay: 0.2, ease: "easeInOut" }}
+                        />
+
+                        {/* Outer hexagon - animated dashed stroke */}
+                        <motion.path
+                          d={outerPathD}
+                          className={isScrolled ? 'stroke-terracotta/40' : 'stroke-white/40'}
+                          strokeWidth="1.5"
+                          strokeDasharray="4 3"
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          initial={{ pathLength: 0, opacity: 0 }}
+                          animate={{ pathLength: 1, opacity: 1 }}
+                          transition={{ duration: 2, delay: 0.5, ease: "easeInOut" }}
+                        />
+
+                        {/* Node circles at outer hexagon vertices */}
+                        {outerPoints.map((point, index) => (
+                          <motion.circle
+                            key={`node-${index}`}
+                            cx={point.x}
+                            cy={point.y}
+                            r="3"
+                            className={isScrolled ? 'fill-white stroke-terracotta/40' : 'fill-white stroke-white/40'}
+                            strokeWidth="1"
+                            initial={{ scale: 0, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ delay: 0.8 + index * 0.05, type: 'spring', stiffness: 400 }}
+                          />
+                        ))}
+
+                        {/* Inner hexagon - gradient fill */}
+                        <motion.path
+                          d={innerPathD}
+                          fill="url(#navHexGradient)"
+                          initial={{ scale: 0, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ duration: 0.5, delay: 0.4, type: "spring", stiffness: 200 }}
+                          style={{ transformOrigin: `${centerX}px ${centerY}px` }}
+                        />
+
+                        {/* Inner hexagon - white stroke */}
+                        <motion.path
+                          d={innerPathD}
+                          className={`${isScrolled ? 'stroke-white/50' : 'stroke-white/60'} group-hover:stroke-white transition-colors`}
+                          strokeWidth="1"
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          initial={{ pathLength: 0 }}
+                          animate={{ pathLength: 1 }}
+                          transition={{ duration: 1.2, delay: 0.6, ease: "easeInOut" }}
+                        />
+                      </>
+                    );
+                  })()}
+                </svg>
+
+                {/* Center circle with EQT text */}
+                <motion.div
+                  className="absolute inset-0 flex items-center justify-center"
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 0.9, type: 'spring', stiffness: 300, damping: 15 }}
+                >
+                  <div className="relative w-7 h-7 rounded-full bg-white shadow-sm flex items-center justify-center">
+                    {/* Pulsating ring */}
+                    <motion.div
+                      className="absolute rounded-full border-2 border-terracotta/30"
+                      style={{ width: '32px', height: '32px' }}
+                      animate={{
+                        scale: [1, 1.4, 1],
+                        opacity: [0.5, 0, 0.5],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    />
+                    {/* EQT text - larger */}
+                    <span className="text-terracotta font-bold text-[9px] tracking-[-0.03em] relative z-10">
+                      EQT
+                    </span>
+                  </div>
+                </motion.div>
               </div>
-              <span
-                className={`font-serif font-bold text-xl ${
-                  isScrolled ? "text-teal" : "text-white"
-                }`}
-              >
-                Equity by Design
-              </span>
+
+              {/* Brand text - cursive "by design" */}
+              <div className="relative overflow-hidden">
+                <motion.span
+                  className={`font-cursive text-2xl transition-colors duration-200 ${
+                    isScrolled ? "text-teal group-hover:text-terracotta" : "text-white group-hover:text-coral"
+                  }`}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3, duration: 0.4 }}
+                >
+                  by design
+                </motion.span>
+                {/* Animated underline on hover */}
+                <div
+                  className={`absolute -bottom-0.5 left-0 h-0.5 w-0 group-hover:w-full transition-all duration-300 ease-out ${
+                    isScrolled ? "bg-terracotta" : "bg-coral"
+                  }`}
+                />
+              </div>
             </Link>
           </motion.div>
 

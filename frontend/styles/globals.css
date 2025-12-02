@@ -10,6 +10,7 @@
   /* Font families */
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-serif: 'Fraunces', Georgia, serif;
+  --font-cursive: var(--font-dancing), 'Dancing Script', cursive;
 
   /* Custom font sizes with line-height and font-weight */
   --font-size-display-xl: clamp(3rem, 8vw, 6rem);
