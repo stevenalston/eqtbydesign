@@ -65,16 +65,16 @@ export default function EquityChallenge() {
             The Equity Challenge
           </h2>
           <p className="text-xl text-teal-700 max-w-3xl mx-auto leading-relaxed">
-            Millions face barriers to opportunity, resources, and justice.
-            But design has the power to break down these barriers and create pathways to equity.
+            Communities and organizations face systemic barriers to opportunity, resources, and justice.
+            Strategic change management has the power to break down these barriers and create pathways to equity.
           </p>
         </motion.div>
 
         {/* Statistics grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-          <AnimatedStat end={78} label="Nonprofits need better digital tools" suffix="%" delay={0.2} />
-          <AnimatedStat end={92} label="Users value accessible design" suffix="%" delay={0.4} />
-          <AnimatedStat end={3} label="Design can multiply impact" suffix="x" delay={0.6} />
+          <AnimatedStat end={25} label="Years of equity-centered consulting" suffix="+" delay={0.2} />
+          <AnimatedStat end={100} label="Communities engaged inclusively" suffix="s" delay={0.4} />
+          <AnimatedStat end={3} label="Sectors served: Government, Nonprofit, Corporate" suffix="" delay={0.6} />
         </div>
 
         {/* Human story section */}
@@ -89,16 +89,16 @@ export default function EquityChallenge() {
             <div>
               <div className="w-16 h-1 bg-gradient-warm mb-6" />
               <h3 className="font-serif text-3xl text-teal mb-4">
-                Design Can Change This
+                Strategic Change Can Transform This
               </h3>
               <p className="text-teal-700 text-lg leading-relaxed mb-6">
                 Every day, organizations working for justice and equity struggle with
-                tools that don't serve their mission. They need design that understands
-                their values, amplifies their voice, and reaches the communities they serve.
+                processes that don't serve their mission. They need strategic partners who understand
+                their values, amplify community voices, and create inclusive pathways to change.
               </p>
               <p className="text-teal-700 text-lg leading-relaxed">
-                That's where we come in. We create design solutions that are not just
-                beautiful, but purposeful—built to drive real, measurable social impact.
+                That's where we come in. We develop strategic solutions that are not just
+                effective, but equitable—built to drive real, measurable systemic transformation.
               </p>
             </div>
             <div className="relative">

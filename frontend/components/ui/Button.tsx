@@ -2,6 +2,7 @@
 
 import { motion, HTMLMotionProps } from 'framer-motion'
 import { ReactNode } from 'react'
+import Link from 'next/link'
 
 interface ButtonProps extends Omit<HTMLMotionProps<'button'>, 'children'> {
   children: ReactNode
@@ -9,6 +10,7 @@ interface ButtonProps extends Omit<HTMLMotionProps<'button'>, 'children'> {
   size?: 'sm' | 'md' | 'lg'
   icon?: ReactNode
   iconPosition?: 'left' | 'right'
+  href?: string
 }
 
 export default function Button({
@@ -18,6 +20,7 @@ export default function Button({
   icon,
   iconPosition = 'right',
   className = '',
+  href,
   ...props
 }: ButtonProps) {
   const baseClasses = 'inline-flex items-center justify-center gap-2 font-medium rounded-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed'
@@ -34,14 +37,10 @@ export default function Button({
     lg: 'px-8 py-4 text-lg',
   }
 
-  return (
-    <motion.button
-      className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.98 }}
-      transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-      {...props}
-    >
+  const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`
+
+  const content = (
+    <>
       {icon && iconPosition === 'left' && (
         <motion.span
           initial={{ x: 0 }}
@@ -61,6 +60,28 @@ export default function Button({
           {icon}
         </motion.span>
       )}
+    </>
+  )
+
+  // Render as Link if href is provided
+  if (href) {
+    return (
+      <Link href={href} className={combinedClasses}>
+        {content}
+      </Link>
+    )
+  }
+
+  // Render as button otherwise
+  return (
+    <motion.button
+      className={combinedClasses}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+      {...props}
+    >
+      {content}
     </motion.button>
   )
 }

@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import { useState } from 'react'
+import Link from 'next/link'
 import Button from './Button'
 
 export default function Navigation() {
@@ -14,10 +15,10 @@ export default function Navigation() {
   })
 
   const navLinks = [
-    { name: 'Work', href: '#work' },
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Insights', href: '#insights' },
+    { name: 'Services', href: '/services' },
+    { name: 'Our Impact', href: '/impact' },
+    { name: 'Team', href: '/team' },
+    { name: 'Contact', href: '/contact' },
   ]
 
   return (
@@ -37,34 +38,37 @@ export default function Navigation() {
             whileHover={{ scale: 1.05 }}
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
           >
-            <a href="#" className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-gradient-warm rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">E</span>
               </div>
               <span className={`font-serif font-bold text-xl ${isScrolled ? 'text-teal' : 'text-white'}`}>
                 Equity by Design
               </span>
-            </a>
+            </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link, index) => (
-              <motion.a
+              <motion.div
                 key={link.name}
-                href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-terracotta ${
-                  isScrolled ? 'text-teal-700' : 'text-white'
-                }`}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
               >
-                {link.name}
-              </motion.a>
+                <Link
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors hover:text-terracotta ${
+                    isScrolled ? 'text-teal-700' : 'text-white'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              </motion.div>
             ))}
-            <Button size="sm" variant="primary">
+            <Button size="sm" variant="primary" href="/contact">
               Contact Us
             </Button>
           </div>
@@ -116,16 +120,16 @@ export default function Navigation() {
       >
         <div className="px-4 py-6 space-y-4">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
               className="block text-teal-700 hover:text-terracotta font-medium"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
-          <Button size="sm" variant="primary" className="w-full">
+          <Button size="sm" variant="primary" className="w-full" href="/contact">
             Contact Us
           </Button>
         </div>

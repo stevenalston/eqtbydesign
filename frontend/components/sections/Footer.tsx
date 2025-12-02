@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import Button from '@/components/ui/Button'
 
 export default function Footer() {
@@ -53,11 +54,11 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>
               </div>
-              <h3 className="font-serif text-2xl mb-4">Start a Project</h3>
+              <h3 className="font-serif text-2xl mb-4">Start a Conversation</h3>
               <p className="text-cream-100 mb-6">
-                Have a project in mind? Let's discuss how we can bring your vision to life.
+                Have goals in mind? Let's discuss how we can partner to create lasting change.
               </p>
-              <Button variant="primary" size="sm" className="w-full">
+              <Button variant="primary" size="sm" className="w-full" href="/contact">
                 Get Started
               </Button>
             </motion.div>
@@ -75,12 +76,12 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
               </div>
-              <h3 className="font-serif text-2xl mb-4">Explore Our Work</h3>
+              <h3 className="font-serif text-2xl mb-4">Explore Our Services</h3>
               <p className="text-cream-100 mb-6">
-                See how we've helped organizations create meaningful impact.
+                See how we've helped organizations create meaningful systemic change.
               </p>
-              <Button variant="outline" size="sm" className="w-full bg-transparent border-white text-white hover:bg-white hover:text-teal">
-                View Portfolio
+              <Button variant="outline" size="sm" className="w-full bg-transparent border-white text-white hover:bg-white hover:text-teal" href="/services">
+                View Services
               </Button>
             </motion.div>
 
@@ -99,7 +100,7 @@ export default function Footer() {
               </div>
               <h3 className="font-serif text-2xl mb-4">Join the Movement</h3>
               <p className="text-cream-100 mb-6">
-                Get insights on equity, design, and social impact delivered to your inbox.
+                Get insights on equity, strategic change, and community impact delivered to your inbox.
               </p>
               <Button variant="secondary" size="sm" className="w-full">
                 Subscribe
@@ -115,16 +116,16 @@ export default function Footer() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             {/* Brand */}
             <div className="md:col-span-1">
-              <div className="flex items-center space-x-2 mb-4">
+              <Link href="/" className="flex items-center space-x-2 mb-4">
                 <div className="w-10 h-10 bg-gradient-warm rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-xl">E</span>
                 </div>
                 <span className="font-serif font-bold text-xl">
                   Equity by Design
                 </span>
-              </div>
+              </Link>
               <p className="text-cream-100 text-sm leading-relaxed">
-                Design that creates equity, justice, and opportunity for all.
+                Strategic consulting that creates equity, justice, and opportunity for all.
               </p>
             </div>
 
@@ -132,20 +133,19 @@ export default function Footer() {
             <div>
               <h4 className="font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-cream-100">
-                <li><a href="#" className="hover:text-coral transition-colors">Web Design</a></li>
-                <li><a href="#" className="hover:text-coral transition-colors">Branding</a></li>
-                <li><a href="#" className="hover:text-coral transition-colors">Digital Strategy</a></li>
-                <li><a href="#" className="hover:text-coral transition-colors">Accessibility</a></li>
+                <li><Link href="/services#civic-engagement" className="hover:text-coral transition-colors">Civic & Public Engagement</Link></li>
+                <li><Link href="/services#consulting" className="hover:text-coral transition-colors">Consulting</Link></li>
+                <li><Link href="/services#systems-change" className="hover:text-coral transition-colors">Systems Change</Link></li>
+                <li><Link href="/services" className="hover:text-coral transition-colors">All Services</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-cream-100">
-                <li><a href="#" className="hover:text-coral transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-coral transition-colors">Our Work</a></li>
-                <li><a href="#" className="hover:text-coral transition-colors">Insights</a></li>
-                <li><a href="#" className="hover:text-coral transition-colors">Contact</a></li>
+                <li><Link href="/team" className="hover:text-coral transition-colors">Our Team</Link></li>
+                <li><Link href="/impact" className="hover:text-coral transition-colors">Our Impact</Link></li>
+                <li><Link href="/contact" className="hover:text-coral transition-colors">Contact</Link></li>
               </ul>
             </div>
 

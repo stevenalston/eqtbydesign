@@ -52,7 +52,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            Design for Everyone
+            Equity-Centered Strategic Planning
           </motion.p>
 
           {/* Main headline */}
@@ -65,7 +65,7 @@ export default function Hero() {
             Creating Equity Through
             <br />
             <span className="gradient-text bg-gradient-to-r from-coral via-cream to-sage bg-clip-text text-transparent">
-              Powerful Design
+              Strategic Change
             </span>
           </motion.h1>
 
@@ -76,8 +76,8 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            We partner with nonprofits and organizations to amplify social impact,
-            creating accessible design solutions that drive meaningful change.
+            25+ years of experience in equity-centered strategic planning, change management,
+            and organizational cultural design within government, community, and corporate sectors.
           </motion.p>
 
           {/* CTAs */}
@@ -90,18 +90,20 @@ export default function Hero() {
             <Button
               size="lg"
               variant="primary"
+              href="/contact"
               icon={
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               }
             >
-              Start a Project
+              Start a Conversation
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="bg-white/10 border-white text-white hover:bg-white hover:text-teal backdrop-blur-sm"
+              href="/services"
               icon={
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -109,7 +111,7 @@ export default function Hero() {
                 </svg>
               }
             >
-              See Our Impact
+              Explore Our Services
             </Button>
           </motion.div>
 

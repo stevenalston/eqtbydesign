@@ -6,36 +6,36 @@ import Button from '@/components/ui/Button'
 
 const caseStudies = [
   {
-    title: 'Community Health Initiative',
-    client: 'Metro Health Coalition',
-    challenge: 'Reaching underserved communities with health resources',
+    title: 'Inclusive Community Engagement',
+    client: 'City of Metro Regional Planning',
+    challenge: 'Ensuring all community voices are heard in urban development planning',
     impact: {
       stat: '250%',
-      label: 'increase in community engagement',
+      label: 'increase in diverse community participation',
     },
-    tags: ['Web Design', 'Accessibility', 'Community Outreach'],
+    tags: ['Civic Engagement', 'Public Outreach', 'Inclusive Facilitation'],
     gradient: 'from-terracotta to-coral',
   },
   {
-    title: 'Youth Education Platform',
-    client: 'Future Leaders Foundation',
-    challenge: 'Making STEM education accessible to all students',
+    title: 'Organizational Equity Transformation',
+    client: 'Statewide Nonprofit Alliance',
+    challenge: 'Building equitable processes across a network of 50+ organizations',
     impact: {
-      stat: '15K+',
-      label: 'students reached in first year',
+      stat: '50+',
+      label: 'organizations transformed',
     },
-    tags: ['UX Design', 'Platform Development', 'Inclusive Design'],
+    tags: ['Systems Change', 'Strategic Planning', 'Change Management'],
     gradient: 'from-teal to-sage',
   },
   {
-    title: 'Justice & Advocacy Hub',
-    client: 'Equal Rights Collective',
-    challenge: 'Amplifying voices for criminal justice reform',
+    title: 'Cultural Design Initiative',
+    client: 'Corporate DEI Council',
+    challenge: 'Creating lasting organizational culture change for equity',
     impact: {
       stat: '3x',
-      label: 'growth in supporter base',
+      label: 'improvement in inclusion metrics',
     },
-    tags: ['Branding', 'Digital Strategy', 'Social Impact'],
+    tags: ['Consulting', 'Cultural Design', 'DEI Strategy'],
     gradient: 'from-sage to-teal',
   },
 ]
@@ -62,7 +62,7 @@ export default function FeaturedImpact() {
             Featured Impact
           </h2>
           <p className="text-xl text-teal-700 max-w-3xl mx-auto leading-relaxed">
-            Real projects. Real results. Real change for communities and causes that matter.
+            Real engagements. Real results. Real systemic change for communities and organizations that matter.
           </p>
         </motion.div>
 
@@ -123,7 +123,7 @@ export default function FeaturedImpact() {
                   className="flex items-center text-terracotta font-medium mt-auto pt-4 border-t border-cream-200"
                   whileHover={{ x: 5 }}
                 >
-                  Read case study
+                  Read the story
                   <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -147,15 +147,15 @@ export default function FeaturedImpact() {
             </svg>
             <div className="flex-grow">
               <p className="text-xl text-teal-700 leading-relaxed mb-6 italic">
-                "Working with Equity by Design transformed not just our digital presence,
-                but how we think about reaching our community. Their commitment to accessibility
-                and impact matched our own values perfectly."
+                "Working with EQT By Design transformed not just our processes,
+                but how we think about engaging our community. Their commitment to equity
+                and inclusive facilitation matched our own values perfectly."
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-gradient-warm" />
                 <div>
                   <div className="font-semibold text-teal">Maria Rodriguez</div>
-                  <div className="text-sm text-teal-600">Executive Director, Metro Health Coalition</div>
+                  <div className="text-sm text-teal-600">Director of Community Engagement, City of Metro</div>
                 </div>
               </div>
             </div>
@@ -179,7 +179,7 @@ export default function FeaturedImpact() {
               </svg>
             }
           >
-            View All Case Studies
+            Explore Our Impact
           </Button>
         </motion.div>
       </div>
