@@ -71,9 +71,9 @@ export default function TeamValues() {
     <section className="py-24 bg-white dark:bg-teal-800 relative overflow-hidden">
       {/* Background decoration */}
       <motion.div
-        className="absolute bottom-0 left-0 w-1/2 h-64 bg-gradient-to-r from-cream-100 to-transparent"
+        className="absolute bottom-0 left-0 w-1/2 h-64 bg-linear-to-r from-cream-100 dark:from-teal-700 to-transparent"
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        whileInView={{ opacity: 0.35 }}
         viewport={{ once: true }}
       />
 

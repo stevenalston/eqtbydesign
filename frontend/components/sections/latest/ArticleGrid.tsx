@@ -61,9 +61,9 @@ export default function ArticleGrid() {
     <section className="py-24 bg-white dark:bg-teal-800 relative overflow-hidden">
       {/* Background decoration */}
       <motion.div
-        className="absolute top-1/3 right-0 w-1/3 h-64 bg-gradient-to-l from-cream-100 to-transparent"
+        className="absolute top-1/3 right-0 w-1/3 h-64 bg-linear-to-l from-cream-500 dark:from-teal-700 to-transparent"
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        whileInView={{ opacity: 0.35 }}
         viewport={{ once: true }}
       />
 
