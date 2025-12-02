@@ -10,11 +10,11 @@
  * - Spam protection
  */
 
-import { z } from 'zod'
-import { Resend } from 'resend'
+import { z } from "zod";
+import { Resend } from "resend";
 
 // Initialize email service (using Resend - you can swap for SendGrid, Postmark, etc.)
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // ============================================================================
 // VALIDATION SCHEMAS
@@ -22,55 +22,62 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 
 const contactFormSchema = z.object({
   // Personal Information
-  name: z.string().min(2, 'Name must be at least 2 characters').max(100),
-  email: z.string().email('Invalid email address'),
+  name: z.string().min(2, "Name must be at least 2 characters").max(100),
+  email: z.string().email("Invalid email address"),
   phone: z.string().optional(),
   organization: z.string().min(2).max(200),
 
   // Organization Details
   organizationType: z.enum([
-    'nonprofit-education',
-    'nonprofit-health',
-    'nonprofit-justice',
-    'nonprofit-environment',
-    'nonprofit-arts',
-    'nonprofit-other',
-    'corporate-tech',
-    'corporate-finance',
-    'corporate-healthcare',
-    'corporate-other',
-    'government',
-    'foundation',
-    'individual',
-    'other',
+    "nonprofit-education",
+    "nonprofit-health",
+    "nonprofit-justice",
+    "nonprofit-environment",
+    "nonprofit-arts",
+    "nonprofit-other",
+    "corporate-tech",
+    "corporate-finance",
+    "corporate-healthcare",
+    "corporate-other",
+    "government",
+    "foundation",
+    "individual",
+    "other",
   ]),
-  organizationSize: z.enum([
-    'small', // 1-10
-    'medium', // 11-50
-    'large', // 51-200
-    'enterprise', // 201+
-  ]).optional(),
+  organizationSize: z
+    .enum([
+      "small", // 1-10
+      "medium", // 11-50
+      "large", // 51-200
+      "enterprise", // 201+
+    ])
+    .optional(),
 
   // Project Details
-  projectType: z.array(z.string()).min(1, 'Select at least one service'),
-  projectDescription: z.string().min(50, 'Please provide more detail about your project').max(2000),
+  projectType: z.array(z.string()).min(1, "Select at least one service"),
+  projectDescription: z
+    .string()
+    .min(50, "Please provide more detail about your project")
+    .max(2000),
   goals: z.string().max(1000).optional(),
 
   // Timeline & Budget
   timeline: z.enum([
-    'urgent', // < 1 month
-    'soon', // 1-3 months
-    'flexible', // 3-6 months
-    'planning', // 6+ months
+    "urgent", // < 1 month
+    "soon", // 1-3 months
+    "flexible", // 3-6 months
+    "planning", // 6+ months
   ]),
-  budget: z.enum([
-    'under-10k',
-    '10k-25k',
-    '25k-50k',
-    '50k-100k',
-    'over-100k',
-    'not-sure',
-  ]).optional(),
+  budget: z
+    .enum([
+      "under-10k",
+      "10k-25k",
+      "25k-50k",
+      "50k-100k",
+      "over-100k",
+      "not-sure",
+    ])
+    .optional(),
 
   // Additional Info
   referralSource: z.string().optional(),
@@ -81,69 +88,69 @@ const contactFormSchema = z.object({
 
   // Honeypot (spam prevention)
   _honeypot: z.string().max(0).optional(),
-})
+});
 
-export type ContactFormData = z.infer<typeof contactFormSchema>
+export type ContactFormData = z.infer<typeof contactFormSchema>;
 
 // ============================================================================
 // SERVER ACTION: Submit Contact Form
 // ============================================================================
 
 export async function submitContactForm(formData: ContactFormData) {
-  'use server'
+  "use server";
 
   try {
     // 1. Validate form data
-    const validatedData = contactFormSchema.parse(formData)
+    const validatedData = contactFormSchema.parse(formData);
 
     // 2. Check honeypot (spam protection)
     if (validatedData._honeypot) {
       // This is likely spam - silently reject
       return {
         success: false,
-        error: 'Invalid submission',
-      }
+        error: "Invalid submission",
+      };
     }
 
     // 3. Rate limiting check (implement with Upstash Redis or similar)
-    const rateLimitOk = await checkRateLimit(validatedData.email)
+    const rateLimitOk = await checkRateLimit(validatedData.email);
     if (!rateLimitOk) {
       return {
         success: false,
-        error: 'Too many requests. Please try again later.',
-      }
+        error: "Too many requests. Please try again later.",
+      };
     }
 
     // 4. Send notification emails
     await Promise.all([
       sendClientConfirmationEmail(validatedData),
       sendInternalNotificationEmail(validatedData),
-    ])
+    ]);
 
     // 5. Save to database/CRM (optional)
-    await saveToDatabase(validatedData)
+    await saveToDatabase(validatedData);
 
     // 6. Optional: Add to CRM (HubSpot, Salesforce, etc.)
     // await addToCRM(validatedData)
 
     return {
       success: true,
-      message: 'Thank you for reaching out! We\'ll be in touch within 24 hours.',
-    }
+      message: "Thank you for reaching out! We'll be in touch within 24 hours.",
+    };
   } catch (error) {
     if (error instanceof z.ZodError) {
       return {
         success: false,
-        error: 'Please check your form and try again.',
+        error: "Please check your form and try again.",
         fieldErrors: error.flatten().fieldErrors,
-      }
+      };
     }
 
-    console.error('Contact form error:', error)
+    console.error("Contact form error:", error);
     return {
       success: false,
-      error: 'Something went wrong. Please try again or email us directly.',
-    }
+      error: "Something went wrong. Please try again or email us directly.",
+    };
   }
 }
 
@@ -155,12 +162,12 @@ export async function submitContactForm(formData: ContactFormData) {
  * Send confirmation email to the person who submitted the form
  */
 async function sendClientConfirmationEmail(data: ContactFormData) {
-  const { name, email, organization } = data
+  const { name, email, organization } = data;
 
   await resend.emails.send({
-    from: 'Equity by Design <hello@equitybydesign.com>',
+    from: "Equity by Design <hello@equitybydesign.com>",
     to: email,
-    subject: 'We received your inquiry - Equity by Design',
+    subject: "We received your inquiry - Equity by Design",
     html: `
       <!DOCTYPE html>
       <html>
@@ -206,7 +213,7 @@ async function sendClientConfirmationEmail(data: ContactFormData) {
         </body>
       </html>
     `,
-  })
+  });
 }
 
 /**
@@ -223,11 +230,11 @@ async function sendInternalNotificationEmail(data: ContactFormData) {
     projectDescription,
     timeline,
     budget,
-  } = data
+  } = data;
 
   await resend.emails.send({
-    from: 'Contact Form <notifications@equitybydesign.com>',
-    to: process.env.INTERNAL_NOTIFICATION_EMAIL || 'team@equitybydesign.com',
+    from: "Contact Form <notifications@equitybydesign.com>",
+    to: process.env.INTERNAL_NOTIFICATION_EMAIL || "team@equitybydesign.com",
     subject: `🎯 New Project Inquiry: ${organization}`,
     html: `
       <!DOCTYPE html>
@@ -240,10 +247,12 @@ async function sendInternalNotificationEmail(data: ContactFormData) {
             .section { background: #f5f5f5; padding: 15px; margin: 15px 0; border-left: 4px solid #E07A5F; }
             .label { font-weight: bold; color: #3D5A80; }
             .priority-${data.timeline} { border-left-color: ${
-              data.timeline === 'urgent' ? '#FF6B6B' :
-              data.timeline === 'soon' ? '#FFA500' :
-              '#81B29A'
-            }; }
+      data.timeline === "urgent"
+        ? "#FF6B6B"
+        : data.timeline === "soon"
+        ? "#FFA500"
+        : "#81B29A"
+    }; }
           </style>
         </head>
         <body>
@@ -254,16 +263,24 @@ async function sendInternalNotificationEmail(data: ContactFormData) {
               <h2>Contact Information</h2>
               <p><span class="label">Name:</span> ${name}</p>
               <p><span class="label">Email:</span> <a href="mailto:${email}">${email}</a></p>
-              ${phone ? `<p><span class="label">Phone:</span> ${phone}</p>` : ''}
+              ${
+                phone ? `<p><span class="label">Phone:</span> ${phone}</p>` : ""
+              }
               <p><span class="label">Organization:</span> ${organization}</p>
               <p><span class="label">Type:</span> ${organizationType}</p>
             </div>
 
             <div class="section priority-${timeline}">
               <h2>Project Details</h2>
-              <p><span class="label">Services Requested:</span> ${projectType.join(', ')}</p>
+              <p><span class="label">Services Requested:</span> ${projectType.join(
+                ", "
+              )}</p>
               <p><span class="label">Timeline:</span> ${timeline.toUpperCase()}</p>
-              ${budget ? `<p><span class="label">Budget:</span> ${budget}</p>` : ''}
+              ${
+                budget
+                  ? `<p><span class="label">Budget:</span> ${budget}</p>`
+                  : ""
+              }
               <p><span class="label">Description:</span></p>
               <p>${projectDescription}</p>
             </div>
@@ -288,7 +305,7 @@ async function sendInternalNotificationEmail(data: ContactFormData) {
         </body>
       </html>
     `,
-  })
+  });
 }
 
 // ============================================================================
@@ -300,22 +317,22 @@ async function sendInternalNotificationEmail(data: ContactFormData) {
  * (Using Sanity as example - could be PostgreSQL, MongoDB, etc.)
  */
 async function saveToDatabase(data: ContactFormData) {
-  const { createClient } = await import('@sanity/client')
+  const { createClient } = await import("@sanity/client");
 
   const client = createClient({
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
-    apiVersion: '2024-01-01',
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
+    apiVersion: "2024-01-01",
     token: process.env.SANITY_API_WRITE_TOKEN,
     useCdn: false,
-  })
+  });
 
   await client.create({
-    _type: 'contactSubmission',
+    _type: "contactSubmission",
     submittedAt: new Date().toISOString(),
-    status: 'new',
+    status: "new",
     ...data,
-  })
+  });
 }
 
 // ============================================================================
@@ -339,28 +356,28 @@ async function checkRateLimit(email: string): Promise<boolean> {
   // }
   // return submissions <= 3 // Max 3 submissions per hour
 
-  return true
+  return true;
 }
 
 // ============================================================================
-// ROUTE HANDLER: POST /api/contact
+// ROUTE HANDLER: POST /api/contact-us
 // ============================================================================
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json()
-    const result = await submitContactForm(body)
+    const body = await request.json();
+    const result = await submitContactForm(body);
 
     if (result.success) {
-      return Response.json(result, { status: 200 })
+      return Response.json(result, { status: 200 });
     } else {
-      return Response.json(result, { status: 400 })
+      return Response.json(result, { status: 400 });
     }
   } catch (error) {
-    console.error('Contact form API error:', error)
+    console.error("Contact form API error:", error);
     return Response.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: "Internal server error" },
       { status: 500 }
-    )
+    );
   }
 }

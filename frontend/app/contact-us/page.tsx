@@ -1,21 +1,22 @@
-import { Metadata } from 'next'
-import Navigation from '@/components/ui/Navigation'
-import ContactHero from '@/components/sections/contact/ContactHero'
-import ContactForm from '@/components/sections/contact/ContactForm'
-import ContactInfo from '@/components/sections/contact/ContactInfo'
-import Footer from '@/components/sections/Footer'
+import { Metadata } from "next";
+import Navigation from "@/components/ui/Navigation";
+import ContactHero from "@/components/sections/contact/ContactHero";
+import ContactForm from "@/components/sections/contact/ContactForm";
+import ContactInfo from "@/components/sections/contact/ContactInfo";
+import Footer from "@/components/sections/Footer";
 
 export const metadata: Metadata = {
-  title: 'Contact Us | EQT By Design - Start a Conversation',
-  description: 'Ready to create meaningful change? Contact EQT By Design to discuss your equity consulting, community engagement, or organizational transformation goals.',
+  title: "Contact Us | EQT By Design - Start a Conversation",
+  description:
+    "Ready to create meaningful change? Contact EQT By Design to discuss your equity consulting, community engagement, or organizational transformation goals.",
   keywords: [
-    'contact equity consultant',
-    'community engagement inquiry',
-    'DEI consulting contact',
-    'strategic planning consultation',
-    'Madison Wisconsin consulting',
+    "contact equity consultant",
+    "community engagement inquiry",
+    "DEI consulting contact",
+    "strategic planning consultation",
+    "Madison Wisconsin consulting",
   ],
-}
+};
 
 export default function ContactPage() {
   return (
@@ -36,5 +37,5 @@ export default function ContactPage() {
       </div>
       <Footer />
     </main>
-  )
+  );
 }

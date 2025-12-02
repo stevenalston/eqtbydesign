@@ -504,13 +504,13 @@ Copy API route files from `backend/api-routes/` to your Next.js project:
 # Create directories
 mkdir -p app/api/blog
 mkdir -p app/api/case-studies
-mkdir -p app/api/contact
+mkdir -p app/api/contact-us
 mkdir -p app/api/newsletter
 
 # Copy route files
 cp backend/api-routes/blog-posts-route.ts app/api/blog/route.ts
 cp backend/api-routes/case-studies-route.ts app/api/case-studies/route.ts
-cp backend/api-routes/contact-form-route.ts app/api/contact/route.ts
+cp backend/api-routes/contact-us-form-route.ts app/api/contact/route.ts
 cp backend/api-routes/newsletter-route.ts app/api/newsletter/route.ts
 ```
 
@@ -615,7 +615,7 @@ export async function POST(request: NextRequest) {
 
 - [ ] GET /api/blog returns posts
 - [ ] GET /api/case-studies returns studies
-- [ ] POST /api/contact sends email
+- [ ] POST /api/contact-us sends email
 - [ ] POST /api/newsletter subscribes user
 
 ### Testing Commands

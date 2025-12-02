@@ -1,34 +1,44 @@
-'use client'
+"use client";
 
-import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
-import { useState } from 'react'
-import Link from 'next/link'
-import Button from './Button'
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Button from "./Button";
 
 export default function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const { scrollY } = useScroll()
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const { scrollY } = useScroll();
+  const pathname = usePathname();
 
-  useMotionValueEvent(scrollY, 'change', (latest) => {
-    setIsScrolled(latest > 50)
-  })
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setIsScrolled(latest > 50);
+  });
 
   const navLinks = [
-    { name: 'Services', href: '/services' },
-    { name: 'Our Impact', href: '/impact' },
-    { name: 'Team', href: '/team' },
-    { name: 'Latest', href: '/latest' },
-  ]
+    { name: "Services", href: "/services" },
+    { name: "Our Impact", href: "/impact" },
+    { name: "Team", href: "/team" },
+    { name: "Latest", href: "/latest" },
+  ];
+
+  const isActiveLink = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
 
   return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-soft' : 'bg-transparent'
+        isScrolled
+          ? "bg-white/95 backdrop-blur-md shadow-soft"
+          : "bg-transparent"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -36,13 +46,17 @@ export default function Navigation() {
           <motion.div
             className="flex-shrink-0"
             whileHover={{ scale: 1.05 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
             <Link href="/" className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-gradient-warm rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">E</span>
               </div>
-              <span className={`font-serif font-bold text-xl ${isScrolled ? 'text-teal' : 'text-white'}`}>
+              <span
+                className={`font-serif font-bold text-xl ${
+                  isScrolled ? "text-teal" : "text-white"
+                }`}
+              >
                 Equity by Design
               </span>
             </Link>
@@ -53,19 +67,54 @@ export default function Navigation() {
             {navLinks.map((link, index) => (
               <motion.div
                 key={link.name}
+                className="relative"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
+                onMouseEnter={() => setHoveredLink(link.href)}
+                onMouseLeave={() => setHoveredLink(null)}
               >
                 <Link
                   href={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-terracotta ${
-                    isScrolled ? 'text-teal-700' : 'text-white'
+                  className={`text-sm font-medium transition-colors duration-200 ${
+                    isActiveLink(link.href)
+                      ? "text-terracotta"
+                      : isScrolled
+                      ? "text-teal-700 hover:text-terracotta"
+                      : "text-white hover:text-coral"
                   }`}
                 >
-                  {link.name}
+                  <motion.span
+                    className="relative inline-block"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                  >
+                    {link.name}
+                  </motion.span>
                 </Link>
+                {/* Animated underline */}
+                <motion.div
+                  className={`absolute -bottom-1 left-0 h-0.5 ${
+                    isScrolled ? "bg-terracotta" : "bg-coral"
+                  }`}
+                  initial={{ width: 0 }}
+                  animate={{
+                    width:
+                      isActiveLink(link.href) || hoveredLink === link.href
+                        ? "100%"
+                        : 0,
+                  }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                />
+                {/* Active dot indicator */}
+                {isActiveLink(link.href) && (
+                  <motion.div
+                    className="absolute -bottom-3 left-1/2 w-1 h-1 rounded-full bg-terracotta"
+                    initial={{ scale: 0, x: "-50%" }}
+                    animate={{ scale: 1, x: "-50%" }}
+                    transition={{ type: "spring", stiffness: 500, damping: 25 }}
+                  />
+                )}
               </motion.div>
             ))}
             <Button size="sm" variant="primary" href="/contact-us">
@@ -77,7 +126,9 @@ export default function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`p-2 rounded-md ${isScrolled ? 'text-teal' : 'text-white'}`}
+              className={`p-2 rounded-md ${
+                isScrolled ? "text-teal" : "text-white"
+              }`}
               aria-label="Toggle menu"
             >
               <svg
@@ -112,28 +163,56 @@ export default function Navigation() {
         className="md:hidden bg-white shadow-lg"
         initial={false}
         animate={{
-          height: isMobileMenuOpen ? 'auto' : 0,
+          height: isMobileMenuOpen ? "auto" : 0,
           opacity: isMobileMenuOpen ? 1 : 0,
         }}
         transition={{ duration: 0.3 }}
-        style={{ overflow: 'hidden' }}
+        style={{ overflow: "hidden" }}
       >
-        <div className="px-4 py-6 space-y-4">
-          {navLinks.map((link) => (
-            <Link
+        <div className="px-4 py-6 space-y-2">
+          {navLinks.map((link, index) => (
+            <motion.div
               key={link.name}
-              href={link.href}
-              className="block text-teal-700 hover:text-terracotta font-medium"
-              onClick={() => setIsMobileMenuOpen(false)}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: index * 0.05 }}
             >
-              {link.name}
-            </Link>
+              <Link
+                href={link.href}
+                className={`block py-2 px-3 rounded-lg font-medium transition-all duration-200 ${
+                  isActiveLink(link.href)
+                    ? "text-terracotta bg-terracotta/10"
+                    : "text-teal-700 hover:text-terracotta hover:bg-terracotta/5"
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <motion.span
+                  className="flex items-center gap-2"
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {isActiveLink(link.href) && (
+                    <motion.span
+                      className="w-1.5 h-1.5 rounded-full bg-terracotta"
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ type: "spring", stiffness: 500 }}
+                    />
+                  )}
+                  {link.name}
+                </motion.span>
+              </Link>
+            </motion.div>
           ))}
-          <Button size="sm" variant="primary" className="w-full" href="/contact-us">
+          <Button
+            size="sm"
+            variant="primary"
+            className="w-full"
+            href="/contact-us"
+          >
             Contact Us
           </Button>
         </div>
       </motion.div>
     </motion.nav>
-  )
+  );
 }
