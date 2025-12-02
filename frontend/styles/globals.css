@@ -1,0 +1,266 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Source detection for Next.js app */
+@source "../pages/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../components/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../app/**/*.{js,ts,jsx,tsx,mdx}";
+
+@theme {
+  /* Font families */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Fraunces', Georgia, serif;
+
+  /* Custom font sizes with line-height and font-weight */
+  --font-size-display-xl: clamp(3rem, 8vw, 6rem);
+  --font-size-display-xl--line-height: 1.1;
+  --font-size-display-xl--font-weight: 700;
+
+  --font-size-display-lg: clamp(2.5rem, 6vw, 4.5rem);
+  --font-size-display-lg--line-height: 1.15;
+  --font-size-display-lg--font-weight: 700;
+
+  --font-size-display-md: clamp(2rem, 5vw, 3.5rem);
+  --font-size-display-md--line-height: 1.2;
+  --font-size-display-md--font-weight: 600;
+
+  /* Primary Palette - Terracotta */
+  --color-terracotta-50: #FAF0ED;
+  --color-terracotta-100: #F5E1DB;
+  --color-terracotta-200: #ECC3B7;
+  --color-terracotta-300: #E2A593;
+  --color-terracotta-400: #E07A5F;
+  --color-terracotta-500: #D9563B;
+  --color-terracotta-600: #B8432D;
+  --color-terracotta-700: #8A3222;
+  --color-terracotta-800: #5C2117;
+  --color-terracotta-900: #2E110C;
+  --color-terracotta: #E07A5F;
+
+  /* Primary Palette - Teal */
+  --color-teal-50: #EBF0F5;
+  --color-teal-100: #D7E1EB;
+  --color-teal-200: #AFC3D7;
+  --color-teal-300: #87A5C3;
+  --color-teal-400: #5F87AF;
+  --color-teal-500: #3D5A80;
+  --color-teal-600: #314866;
+  --color-teal-700: #25364D;
+  --color-teal-800: #192433;
+  --color-teal-900: #0D121A;
+  --color-teal: #3D5A80;
+
+  /* Primary Palette - Sage */
+  --color-sage-50: #F2F7F5;
+  --color-sage-100: #E5EFEB;
+  --color-sage-200: #CBDFD7;
+  --color-sage-300: #B1CFC3;
+  --color-sage-400: #97BFAF;
+  --color-sage-500: #81B29A;
+  --color-sage-600: #5D9B7E;
+  --color-sage-700: #47785F;
+  --color-sage-800: #305040;
+  --color-sage-900: #182820;
+  --color-sage: #81B29A;
+
+  /* Primary Palette - Cream */
+  --color-cream-50: #FEFDF9;
+  --color-cream-100: #FCFBF3;
+  --color-cream-200: #F9F7E7;
+  --color-cream-300: #F7F4DB;
+  --color-cream-400: #F4F1DE;
+  --color-cream-500: #EBE4C3;
+  --color-cream-600: #D9CCA0;
+  --color-cream-700: #C7B47D;
+  --color-cream-800: #A89759;
+  --color-cream-900: #7A6D41;
+  --color-cream: #F4F1DE;
+
+  /* Accent Palette - Coral */
+  --color-coral-50: #FEF9F0;
+  --color-coral-100: #FDF3E1;
+  --color-coral-200: #FAE7C3;
+  --color-coral-300: #F8DBA5;
+  --color-coral-400: #F5CF87;
+  --color-coral-500: #F2CC8F;
+  --color-coral-600: #EDB85A;
+  --color-coral-700: #E7A32C;
+  --color-coral-800: #C18416;
+  --color-coral-900: #8A5F10;
+  --color-coral: #F2CC8F;
+
+  /* Accent Palette - Plum */
+  --color-plum-50: #F0EDFA;
+  --color-plum-100: #E1DBF5;
+  --color-plum-200: #C3B7EB;
+  --color-plum-300: #A593E1;
+  --color-plum-400: #876FD7;
+  --color-plum-500: #6D5AAD;
+  --color-plum-600: #554971;
+  --color-plum-700: #413754;
+  --color-plum-800: #2C2538;
+  --color-plum-900: #16121C;
+  --color-plum: #554971;
+
+  /* Accent Palette - Gold */
+  --color-gold-50: #FDF7E7;
+  --color-gold-100: #FBEFCF;
+  --color-gold-200: #F7DF9F;
+  --color-gold-300: #F3CF6F;
+  --color-gold-400: #EFBF3F;
+  --color-gold-500: #E6AF2E;
+  --color-gold-600: #C79318;
+  --color-gold-700: #976F12;
+  --color-gold-800: #674A0C;
+  --color-gold-900: #372606;
+  --color-gold: #E6AF2E;
+
+  /* Custom animations */
+  --animate-gradient: gradient 8s ease infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
+
+  /* Custom box shadows */
+  --shadow-soft: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lift: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
+}
+
+/* Custom keyframes */
+@keyframes gradient {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', system-ui, sans-serif;
+    --font-fraunces: 'Fraunces', Georgia, serif;
+  }
+
+  *,
+  *::before,
+  *::after {
+    border-color: theme(colors.teal.200);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-teal-900 antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Focus visible for keyboard navigation */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-terracotta ring-2 ring-terracotta/20 rounded;
+  }
+}
+
+@layer components {
+  /* Gradient text effect */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #E07A5F 0%, #F2CC8F 50%, #81B29A 100%);
+  }
+
+  /* Gradient backgrounds */
+  .bg-gradient-warm {
+    background-image: linear-gradient(135deg, #E07A5F 0%, #F2CC8F 50%, #81B29A 100%);
+  }
+
+  .bg-gradient-hero {
+    background-image: linear-gradient(135deg, #3D5A80 0%, #81B29A 100%);
+  }
+
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+
+  /* Noise texture overlay */
+  .noise-overlay {
+    position: relative;
+  }
+
+  .noise-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-cream-200;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-terracotta rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-terracotta-600;
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Text shadows for readability */
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-shadow-md {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+}

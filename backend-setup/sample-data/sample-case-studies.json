@@ -1,0 +1,403 @@
+{
+  "_comment": "Sample case studies for Equity by Design - Import into Sanity Studio",
+  "caseStudies": [
+    {
+      "_type": "caseStudy",
+      "title": "Redesigning Education Access for Communities First Foundation",
+      "slug": {
+        "current": "communities-first-foundation-education-access"
+      },
+      "shortDescription": "A complete digital transformation that increased student enrollment by 300% and improved accessibility scores to 98/100.",
+      "featured": true,
+      "isDraft": false,
+      "publishedAt": "2025-11-01T00:00:00Z",
+
+      "client": {
+        "name": "Communities First Foundation",
+        "industry": "nonprofit-education",
+        "location": "Oakland, CA",
+        "website": "https://example.com"
+      },
+
+      "projectType": [
+        "web-development",
+        "ux-ui",
+        "content-strategy",
+        "accessibility"
+      ],
+
+      "timeline": {
+        "startDate": "2024-06-01",
+        "endDate": "2024-10-15",
+        "duration": "4.5 months"
+      },
+
+      "challenge": {
+        "overview": "Communities First Foundation provides educational resources to underserved communities, but their outdated website created barriers for the very people they aimed to serve. With a confusing navigation structure, poor mobile experience, and failing accessibility standards, they were losing potential students and donors.",
+        "painPoints": [
+          {
+            "point": "71% bounce rate on mobile devices",
+            "description": "Most users accessed the site from smartphones, but the unresponsive design made it nearly unusable on small screens."
+          },
+          {
+            "point": "WCAG F rating for accessibility",
+            "description": "Screen readers couldn't navigate the site, excluding vision-impaired users from accessing educational resources."
+          },
+          {
+            "point": "25% enrollment form completion rate",
+            "description": "A lengthy, confusing enrollment process caused 75% of interested students to abandon the form."
+          },
+          {
+            "point": "Content in English only",
+            "description": "Despite serving a multilingual community, the website offered no translation options."
+          }
+        ],
+        "context": "The foundation had been using the same website framework since 2015, with band-aid fixes applied over the years. Leadership recognized that their digital presence was no longer serving their mission."
+      },
+
+      "approach": {
+        "methodology": "We employed a community-centered design process, starting with extensive user research involving students, parents, educators, and donors. Every design decision was tested with real users before implementation.",
+        "processSteps": [
+          {
+            "stepNumber": 1,
+            "title": "Discovery & Community Engagement",
+            "description": "Conducted interviews with 45 community members, ran usability tests on the existing site, and analyzed user behavior data. Held community workshops to understand needs and barriers.",
+            "duration": "3 weeks",
+            "icon": "search",
+            "activities": [
+              "User interviews (students, parents, staff)",
+              "Competitive analysis of education nonprofits",
+              "Accessibility audit",
+              "Analytics deep dive",
+              "Stakeholder workshops"
+            ]
+          },
+          {
+            "stepNumber": 2,
+            "title": "Strategy & Information Architecture",
+            "description": "Developed a new site structure based on user mental models, simplified navigation, and created clear pathways for different user types (students, donors, volunteers).",
+            "duration": "2 weeks",
+            "icon": "strategy",
+            "activities": [
+              "User journey mapping",
+              "Content inventory and audit",
+              "Card sorting exercises",
+              "Sitemap creation",
+              "Persona development"
+            ]
+          },
+          {
+            "stepNumber": 3,
+            "title": "Design & Prototyping",
+            "description": "Created mobile-first wireframes and high-fidelity designs with a warm, welcoming aesthetic. Prioritized accessibility with AAA color contrast and clear visual hierarchy.",
+            "duration": "4 weeks",
+            "icon": "pencil",
+            "activities": [
+              "Wireframing (mobile-first)",
+              "Visual design system creation",
+              "Interactive prototypes",
+              "Usability testing with community members",
+              "Design iterations based on feedback"
+            ]
+          },
+          {
+            "stepNumber": 4,
+            "title": "Development & Integration",
+            "description": "Built a responsive Next.js website with Sanity CMS, enabling the foundation's staff to update content easily. Integrated with existing enrollment and donation systems.",
+            "duration": "6 weeks",
+            "icon": "code",
+            "activities": [
+              "Next.js development",
+              "Sanity CMS setup and training",
+              "API integrations (CRM, payment processor)",
+              "Multi-language implementation",
+              "Performance optimization"
+            ]
+          },
+          {
+            "stepNumber": 5,
+            "title": "Testing & Quality Assurance",
+            "description": "Rigorous testing across devices, browsers, and assistive technologies. Conducted accessibility audits and performance optimization.",
+            "duration": "2 weeks",
+            "icon": "clipboard",
+            "activities": [
+              "Cross-browser testing",
+              "Mobile device testing",
+              "Screen reader testing (NVDA, JAWS)",
+              "Lighthouse performance audits",
+              "Load testing"
+            ]
+          },
+          {
+            "stepNumber": 6,
+            "title": "Launch & Training",
+            "description": "Phased rollout with staff training on content management, ongoing monitoring, and rapid iteration based on real-world usage.",
+            "duration": "1 week",
+            "icon": "rocket",
+            "activities": [
+              "Staff CMS training",
+              "Soft launch with beta users",
+              "Analytics setup and monitoring",
+              "Public launch",
+              "Post-launch support"
+            ]
+          }
+        ],
+        "collaboration": {
+          "clientStakeholders": "Executive Director, Program Manager, Communications Lead, 3 community advisors"
+        }
+      },
+
+      "solution": {
+        "overview": "We delivered a fully responsive, WCAG AAA-compliant website with a modern design system, intuitive navigation, and seamless content management. The new platform puts students and families first, with clear pathways to enrollment, resources, and support.",
+        "deliverables": [
+          {
+            "name": "Responsive Website",
+            "description": "Mobile-first Next.js application with server-side rendering for fast load times"
+          },
+          {
+            "name": "Content Management System",
+            "description": "Sanity Studio with custom schemas, enabling non-technical staff to publish content"
+          },
+          {
+            "name": "Multilingual Support",
+            "description": "English and Spanish versions with easy content translation workflow"
+          },
+          {
+            "name": "Enrollment System Integration",
+            "description": "Streamlined 3-step enrollment form connected to existing student database"
+          },
+          {
+            "name": "Resource Library",
+            "description": "Searchable, filterable collection of educational materials with download tracking"
+          },
+          {
+            "name": "Design System",
+            "description": "Comprehensive component library and style guide for future consistency"
+          }
+        ],
+        "features": [
+          "WCAG AAA accessibility compliance",
+          "Sub-2-second page load times",
+          "Mobile-optimized enrollment flow",
+          "Bilingual (EN/ES) content",
+          "Integrated donation platform",
+          "Student success stories showcase",
+          "Event calendar with registration",
+          "Newsletter signup with segmentation"
+        ]
+      },
+
+      "impact": {
+        "overview": "The results exceeded all expectations. Within three months of launch, the foundation saw dramatic increases in enrollment, engagement, and donations. Most importantly, they received heartfelt feedback from families who said they finally felt welcomed and included.",
+        "metrics": [
+          {
+            "metric": "Student Enrollment",
+            "value": "300%",
+            "change": "increase",
+            "context": "increase in program applications within 3 months",
+            "icon": "users"
+          },
+          {
+            "metric": "Mobile Engagement",
+            "value": "156%",
+            "change": "increase",
+            "context": "increase in mobile session duration",
+            "icon": "engagement"
+          },
+          {
+            "metric": "Form Completion Rate",
+            "value": "87%",
+            "change": "increase",
+            "context": "up from 25% on the old site",
+            "icon": "growth"
+          },
+          {
+            "metric": "Accessibility Score",
+            "value": "98/100",
+            "change": "increase",
+            "context": "WCAG AAA compliance achieved",
+            "icon": "custom"
+          },
+          {
+            "metric": "Donation Conversion",
+            "value": "2.3x",
+            "change": "increase",
+            "context": "more than doubled donation completion rate",
+            "icon": "revenue"
+          },
+          {
+            "metric": "Page Load Time",
+            "value": "76%",
+            "change": "decrease",
+            "context": "faster load times (from 8.2s to 1.9s)",
+            "icon": "time"
+          }
+        ],
+        "testimonial": {
+          "quote": "This website transformation didn't just improve our digital presence—it fundamentally changed how we serve our community. We've heard from families who said they finally felt seen and welcomed. The accessibility improvements mean we can truly serve everyone, and the enrollment numbers speak for themselves. This is what equity-centered design looks like in action.",
+          "author": "Maria Rodriguez",
+          "role": "Executive Director, Communities First Foundation"
+        },
+        "longTermImpact": "Six months post-launch, the foundation has served 450 new students, raised $185,000 through online donations, and recruited 120 new volunteers—all through their website. The CMS empowers their team to publish weekly success stories and resources, keeping the community engaged and informed."
+      }
+    },
+
+    {
+      "_type": "caseStudy",
+      "title": "Building Trust Through Transparency: HealthBridge Nonprofit Rebrand",
+      "slug": {
+        "current": "healthbridge-nonprofit-rebrand"
+      },
+      "shortDescription": "A comprehensive rebrand and digital platform that restored public trust and increased donor retention by 62% through radical transparency.",
+      "featured": true,
+      "isDraft": false,
+      "publishedAt": "2025-10-15T00:00:00Z",
+
+      "client": {
+        "name": "HealthBridge Nonprofit",
+        "industry": "nonprofit-health",
+        "location": "Seattle, WA",
+        "website": "https://example.com"
+      },
+
+      "projectType": [
+        "brand-identity",
+        "web-development",
+        "content-strategy",
+        "data-viz"
+      ],
+
+      "timeline": {
+        "startDate": "2024-03-01",
+        "endDate": "2024-08-30",
+        "duration": "6 months"
+      },
+
+      "challenge": {
+        "overview": "HealthBridge, a healthcare advocacy nonprofit, faced a crisis of trust after leadership changes and unclear communication about fund allocation. Donor retention dropped to 38%, and media coverage questioned their effectiveness.",
+        "painPoints": [
+          {
+            "point": "62% donor attrition year-over-year",
+            "description": "Existing donors were leaving due to lack of transparency and unclear impact reporting."
+          },
+          {
+            "point": "Unclear brand identity",
+            "description": "Inconsistent messaging and visual identity made the organization feel disorganized and untrustworthy."
+          },
+          {
+            "point": "No impact visualization",
+            "description": "Donors couldn't see where their money went or what outcomes it achieved."
+          },
+          {
+            "point": "Outdated communications",
+            "description": "Annual report PDFs and infrequent email updates failed to engage modern donors."
+          }
+        ]
+      },
+
+      "impact": {
+        "overview": "The rebrand and transparency platform restored confidence. Donors responded powerfully to the honest, data-driven storytelling, and HealthBridge regained its reputation as a leading healthcare advocate.",
+        "metrics": [
+          {
+            "metric": "Donor Retention",
+            "value": "62%",
+            "change": "increase",
+            "context": "retention rate up from 38% to 61% in 6 months",
+            "icon": "growth"
+          },
+          {
+            "metric": "Trust Score",
+            "value": "89%",
+            "change": "increase",
+            "context": "donor trust rating (measured via survey)",
+            "icon": "custom"
+          },
+          {
+            "metric": "Impact Dashboard Views",
+            "value": "12K",
+            "change": "increase",
+            "context": "monthly active users exploring impact data",
+            "icon": "users"
+          },
+          {
+            "metric": "Media Sentiment",
+            "value": "Positive",
+            "change": "increase",
+            "context": "shift from negative to 78% positive coverage",
+            "icon": "custom"
+          }
+        ],
+        "testimonial": {
+          "quote": "Equity by Design helped us face our challenges head-on. Instead of hiding from tough questions, we embraced transparency. The new brand and platform don't just look good—they embody our commitment to accountability. Our donors are coming back because they can finally see the real impact of their support.",
+          "author": "Dr. James Chen",
+          "role": "CEO, HealthBridge Nonprofit"
+        }
+      }
+    },
+
+    {
+      "_type": "caseStudy",
+      "title": "Amplifying Indigenous Voices: Cultural Heritage Digital Archive",
+      "slug": {
+        "current": "indigenous-voices-cultural-heritage-archive"
+      },
+      "shortDescription": "A co-created digital archive platform that centers Indigenous knowledge, supports language revitalization, and has reached 85,000 community members globally.",
+      "featured": false,
+      "isDraft": false,
+      "publishedAt": "2025-09-20T00:00:00Z",
+
+      "client": {
+        "name": "Indigenous Heritage Collective",
+        "industry": "nonprofit-arts",
+        "location": "Albuquerque, NM",
+        "website": "https://example.com"
+      },
+
+      "projectType": [
+        "web-development",
+        "ux-ui",
+        "content-strategy",
+        "impact-campaign"
+      ],
+
+      "impact": {
+        "metrics": [
+          {
+            "metric": "Community Reach",
+            "value": "85,000",
+            "change": "increase",
+            "context": "people accessing cultural resources globally",
+            "icon": "users"
+          },
+          {
+            "metric": "Languages Preserved",
+            "value": "12",
+            "change": "increase",
+            "context": "Indigenous languages documented and shared",
+            "icon": "custom"
+          },
+          {
+            "metric": "Stories Shared",
+            "value": "2,300+",
+            "change": "increase",
+            "context": "oral histories, songs, and cultural knowledge pieces",
+            "icon": "engagement"
+          },
+          {
+            "metric": "Educational Use",
+            "value": "450",
+            "change": "increase",
+            "context": "schools using the archive in curriculum",
+            "icon": "custom"
+          }
+        ],
+        "testimonial": {
+          "quote": "This project honored our way of knowing and sharing. The design team listened deeply, learned from our elders, and created a platform that feels like home. Our stories are being passed to the next generation in a way that respects tradition while embracing modern technology. This is cultural preservation done right.",
+          "author": "Grandmother Willow Star",
+          "role": "Elder Council Member & Project Advisor"
+        }
+      }
+    }
+  ]
+}

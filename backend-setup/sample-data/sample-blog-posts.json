@@ -1,0 +1,175 @@
+{
+  "_comment": "Sample blog posts for Equity by Design - Import into Sanity Studio",
+  "blogPosts": [
+    {
+      "_type": "blogPost",
+      "title": "5 Principles of Equity-Centered Design",
+      "slug": {
+        "current": "5-principles-equity-centered-design"
+      },
+      "excerpt": "Discover the fundamental principles that guide our approach to creating inclusive, accessible, and impactful design solutions for social good.",
+      "publishedAt": "2025-11-15T10:00:00Z",
+      "isDraft": false,
+      "readingTime": 6,
+      "tags": ["equity", "design principles", "social impact", "accessibility"],
+      "content": "Blog post content would be in Portable Text format here...",
+      "seo": {
+        "metaTitle": "5 Principles of Equity-Centered Design | Equity by Design",
+        "metaDescription": "Learn the 5 core principles that drive equity-centered design: inclusivity, accessibility, community voice, cultural competency, and measurable impact.",
+        "keywords": ["equity design", "inclusive design", "social impact design"]
+      }
+    },
+    {
+      "_type": "blogPost",
+      "title": "How Accessible Design Drives Better Outcomes for Everyone",
+      "slug": {
+        "current": "accessible-design-drives-better-outcomes"
+      },
+      "excerpt": "Accessibility isn't just about compliance—it's about creating experiences that work better for all users. Here's how accessible design benefits everyone.",
+      "publishedAt": "2025-11-08T14:30:00Z",
+      "isDraft": false,
+      "readingTime": 8,
+      "tags": ["accessibility", "UX design", "inclusive design", "WCAG"],
+      "seo": {
+        "metaTitle": "How Accessible Design Benefits All Users | Equity by Design",
+        "metaDescription": "Discover how designing for accessibility creates better user experiences for everyone, not just people with disabilities. Real examples and impact metrics.",
+        "keywords": ["accessible design", "WCAG", "inclusive UX", "universal design"]
+      }
+    },
+    {
+      "_type": "blogPost",
+      "title": "Redesigning the Nonprofit Experience: A Case for User-Centered Design",
+      "slug": {
+        "current": "redesigning-nonprofit-experience-user-centered-design"
+      },
+      "excerpt": "Nonprofits face unique challenges in digital design. Learn how user-centered design principles can help organizations amplify their impact.",
+      "publishedAt": "2025-11-01T09:00:00Z",
+      "isDraft": false,
+      "readingTime": 7,
+      "tags": ["nonprofit", "user-centered design", "digital strategy", "social sector"],
+      "seo": {
+        "metaTitle": "User-Centered Design for Nonprofits | Equity by Design",
+        "metaDescription": "How nonprofits can use user-centered design to better serve their communities, engage donors, and amplify their mission. Practical strategies and examples.",
+        "keywords": ["nonprofit design", "user-centered design", "nonprofit websites", "social impact"]
+      }
+    },
+    {
+      "_type": "blogPost",
+      "title": "The ROI of Equity: Why Inclusive Design Is Good for Business",
+      "slug": {
+        "current": "roi-of-equity-inclusive-design-business"
+      },
+      "excerpt": "Inclusive design isn't just the right thing to do—it's smart business. Explore the data behind why equity-centered design drives better outcomes and ROI.",
+      "publishedAt": "2025-10-25T11:00:00Z",
+      "isDraft": false,
+      "readingTime": 10,
+      "tags": ["ROI", "business impact", "inclusive design", "DEI"],
+      "seo": {
+        "metaTitle": "The Business ROI of Inclusive Design | Equity by Design",
+        "metaDescription": "Data-driven analysis of how inclusive design improves user engagement, expands market reach, and drives measurable business outcomes.",
+        "keywords": ["inclusive design ROI", "DEI business impact", "accessible design benefits"]
+      }
+    },
+    {
+      "_type": "blogPost",
+      "title": "From Wireframes to Impact: Our Design Process Explained",
+      "slug": {
+        "current": "design-process-wireframes-to-impact"
+      },
+      "excerpt": "Ever wondered what goes into creating a website that drives real social impact? We break down our design process from discovery to launch.",
+      "publishedAt": "2025-10-18T13:00:00Z",
+      "isDraft": false,
+      "readingTime": 9,
+      "tags": ["design process", "UX methodology", "case study", "web development"],
+      "seo": {
+        "metaTitle": "Our Design Process: From Wireframes to Impact | Equity by Design",
+        "metaDescription": "A transparent look at our 6-phase design process for creating impactful, user-centered digital experiences for nonprofits and social enterprises.",
+        "keywords": ["design process", "UX methodology", "web design process"]
+      }
+    },
+    {
+      "_type": "blogPost",
+      "title": "Community-Centered Design: Listening Before Creating",
+      "slug": {
+        "current": "community-centered-design-listening-before-creating"
+      },
+      "excerpt": "The best design solutions come from deep listening. Learn how we partner with communities to co-create solutions that truly meet their needs.",
+      "publishedAt": "2025-10-10T10:30:00Z",
+      "isDraft": false,
+      "readingTime": 7,
+      "tags": ["community design", "co-creation", "participatory design", "equity"],
+      "seo": {
+        "metaTitle": "Community-Centered Design Methodology | Equity by Design",
+        "metaDescription": "How we use participatory design methods to create solutions with communities, not for them. Real examples and best practices.",
+        "keywords": ["community-centered design", "participatory design", "co-creation"]
+      }
+    },
+    {
+      "_type": "blogPost",
+      "title": "Data Visualization for Social Good: Making Complex Data Accessible",
+      "slug": {
+        "current": "data-visualization-social-good-accessible"
+      },
+      "excerpt": "Data tells powerful stories—when it's presented accessibly. Explore how thoughtful data visualization can drive understanding and action.",
+      "publishedAt": "2025-09-28T15:00:00Z",
+      "isDraft": false,
+      "readingTime": 8,
+      "tags": ["data visualization", "accessibility", "storytelling", "social impact"],
+      "seo": {
+        "metaTitle": "Accessible Data Visualization for Social Impact | Equity by Design",
+        "metaDescription": "Best practices for creating data visualizations that are both compelling and accessible. Make your data drive action.",
+        "keywords": ["data visualization", "accessible charts", "data storytelling"]
+      }
+    },
+    {
+      "_type": "blogPost",
+      "title": "Color, Contrast, and Culture: Designing for Global Audiences",
+      "slug": {
+        "current": "color-contrast-culture-designing-global-audiences"
+      },
+      "excerpt": "Color choices carry cultural meaning and accessibility implications. Learn how to create color palettes that work across cultures and abilities.",
+      "publishedAt": "2025-09-15T12:00:00Z",
+      "isDraft": false,
+      "readingTime": 6,
+      "tags": ["color theory", "accessibility", "cultural design", "global design"],
+      "seo": {
+        "metaTitle": "Culturally Sensitive & Accessible Color Design | Equity by Design",
+        "metaDescription": "How to choose colors that meet WCAG accessibility standards while respecting cultural contexts and creating emotional impact.",
+        "keywords": ["color accessibility", "WCAG contrast", "cultural color meaning"]
+      }
+    }
+  ],
+
+  "categories": [
+    {
+      "_type": "category",
+      "title": "Design Principles",
+      "slug": { "current": "design-principles" },
+      "description": "Fundamental approaches to equity-centered design"
+    },
+    {
+      "_type": "category",
+      "title": "Accessibility",
+      "slug": { "current": "accessibility" },
+      "description": "Creating inclusive experiences for all users"
+    },
+    {
+      "_type": "category",
+      "title": "Case Studies",
+      "slug": { "current": "case-studies" },
+      "description": "Real-world examples and project insights"
+    },
+    {
+      "_type": "category",
+      "title": "Nonprofit Tech",
+      "slug": { "current": "nonprofit-tech" },
+      "description": "Digital strategies for social impact organizations"
+    },
+    {
+      "_type": "category",
+      "title": "Process & Methodology",
+      "slug": { "current": "process-methodology" },
+      "description": "How we work and why it matters"
+    }
+  ]
+}

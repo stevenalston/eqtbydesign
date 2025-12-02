@@ -1,0 +1,388 @@
+{
+  "_comment": "Sample team members for Equity by Design - Import into Sanity Studio",
+  "teamMembers": [
+    {
+      "_type": "teamMember",
+      "name": "Sarah Chen",
+      "slug": {
+        "current": "sarah-chen"
+      },
+      "role": "Founder & Creative Director",
+      "department": "leadership",
+      "displayOrder": 1,
+      "isActive": true,
+      "pronouns": "she/her",
+
+      "shortBio": "Sarah founded Equity by Design with a vision to make design a force for social justice, bringing 15+ years of experience in inclusive UX.",
+
+      "fullBio": "Sarah Chen is the founder and creative director of Equity by Design, where she leads a team dedicated to creating digital experiences that advance equity and social justice. With over 15 years of experience in UX design, brand strategy, and nonprofit consulting, Sarah has worked with organizations ranging from grassroots community groups to major foundations.\n\nPrior to founding Equity by Design, Sarah served as Senior UX Designer at TechForGood and led design initiatives for the Social Justice Design Collaborative. Her work has been recognized with awards from AIGA, the Webby Awards, and the Communication Arts Design Annual.\n\nSarah holds a Master's degree in Human-Computer Interaction from Carnegie Mellon University and a Bachelor's in Visual Communication Design from the University of Washington. She is a frequent speaker at design conferences and has taught inclusive design workshops to over 500 designers.\n\nWhen she's not designing, Sarah volunteers with youth coding programs and enjoys hiking the Pacific Northwest trails with her rescue dog, Luna.",
+
+      "expertise": [
+        "UX Strategy",
+        "Inclusive Design",
+        "Brand Development",
+        "Accessibility",
+        "Design Leadership",
+        "User Research",
+        "Nonprofit Consulting"
+      ],
+
+      "quote": "Design is never neutral. We have a choice to either reinforce inequity or actively work to dismantle it.",
+
+      "yearsExperience": 15,
+
+      "education": [
+        {
+          "degree": "Master of Human-Computer Interaction",
+          "institution": "Carnegie Mellon University",
+          "year": "2008"
+        },
+        {
+          "degree": "BA in Visual Communication Design",
+          "institution": "University of Washington",
+          "year": "2006"
+        }
+      ],
+
+      "awards": [
+        {
+          "title": "AIGA Diversity & Inclusion Leadership Award",
+          "organization": "AIGA",
+          "year": "2024"
+        },
+        {
+          "title": "Webby Award for Best Nonprofit Website",
+          "organization": "The Webby Awards",
+          "year": "2023"
+        }
+      ],
+
+      "email": "sarah@equitybydesign.com",
+
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/sarahchen",
+        "twitter": "https://twitter.com/sarahchendesign",
+        "dribbble": "https://dribbble.com/sarahchen"
+      },
+
+      "languages": ["English", "Mandarin"],
+
+      "interests": [
+        "Youth mentorship",
+        "Hiking",
+        "Community organizing",
+        "Accessible technology"
+      ],
+
+      "joinDate": "2018-01-15"
+    },
+
+    {
+      "_type": "teamMember",
+      "name": "Marcus Johnson",
+      "slug": {
+        "current": "marcus-johnson"
+      },
+      "role": "Lead Developer",
+      "department": "development",
+      "displayOrder": 11,
+      "isActive": true,
+      "pronouns": "he/him",
+
+      "shortBio": "Marcus builds accessible, performant web experiences using modern frameworks, with a passion for making the web work for everyone.",
+
+      "fullBio": "Marcus Johnson is Equity by Design's lead developer, bringing deep expertise in Next.js, React, and modern web technologies. He specializes in building accessible, high-performance web applications that deliver exceptional user experiences across all devices.\n\nBefore joining Equity by Design, Marcus worked as a senior engineer at a major e-commerce platform where he led accessibility initiatives that improved screen reader compatibility by 200%. His commitment to inclusive development stems from watching his grandmother struggle with inaccessible websites.\n\nMarcus is an active contributor to open-source accessibility projects and has given talks at React Conf and A11y Camp about building inclusive component libraries. He holds certifications in WCAG 2.2 and ARIA best practices.\n\nOutside of coding, Marcus mentors aspiring developers through Code for Good and plays bass in a local jazz trio.",
+
+      "expertise": [
+        "Next.js & React",
+        "Web Accessibility (WCAG)",
+        "Performance Optimization",
+        "Headless CMS",
+        "TypeScript",
+        "Server-Side Rendering",
+        "API Development"
+      ],
+
+      "quote": "Every line of code is an opportunity to include or exclude. I choose to build a more accessible web.",
+
+      "yearsExperience": 10,
+
+      "education": [
+        {
+          "degree": "BS in Computer Science",
+          "institution": "Howard University",
+          "year": "2013"
+        }
+      ],
+
+      "awards": [
+        {
+          "title": "Open Source Accessibility Contribution Award",
+          "organization": "React Community",
+          "year": "2024"
+        }
+      ],
+
+      "email": "marcus@equitybydesign.com",
+
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/marcusjohnsondev",
+        "github": "https://github.com/marcusjohnson",
+        "twitter": "https://twitter.com/marcusbuilds"
+      },
+
+      "languages": ["English"],
+
+      "interests": [
+        "Jazz music",
+        "Open source",
+        "Tech mentorship",
+        "Cycling"
+      ],
+
+      "joinDate": "2019-06-01"
+    },
+
+    {
+      "_type": "teamMember",
+      "name": "Priya Patel",
+      "slug": {
+        "current": "priya-patel"
+      },
+      "role": "Senior UX Designer",
+      "department": "design",
+      "displayOrder": 12,
+      "isActive": true,
+      "pronouns": "she/her",
+
+      "shortBio": "Priya designs human-centered experiences rooted in research, empathy, and a commitment to dismantling barriers to access.",
+
+      "fullBio": "Priya Patel is a senior UX designer at Equity by Design with a background in human-centered design and social impact. She specializes in user research, information architecture, and designing complex systems for diverse user groups.\n\nPriya's design philosophy centers on deep listening and co-creation. She believes the best solutions emerge when designers partner with communities rather than design for them. Her work has helped nonprofits increase program enrollment, improve user satisfaction, and better serve marginalized communities.\n\nPreviously, Priya worked at IDEO's CoLab focusing on social innovation and spent three years as a Peace Corps volunteer in Nepal designing community health programs. She holds a Master's in Design for Social Innovation from SVA and a BA in Psychology from UC Berkeley.\n\nPriya is a certified facilitator in participatory design methods and regularly conducts workshops on culturally responsive design practices.",
+
+      "expertise": [
+        "User Research",
+        "Participatory Design",
+        "Information Architecture",
+        "Wireframing & Prototyping",
+        "Usability Testing",
+        "Design Facilitation",
+        "Community Engagement"
+      ],
+
+      "quote": "Design isn't about making things pretty—it's about making things work for people who've been systematically excluded.",
+
+      "yearsExperience": 8,
+
+      "education": [
+        {
+          "degree": "MFA in Design for Social Innovation",
+          "institution": "School of Visual Arts",
+          "year": "2017"
+        },
+        {
+          "degree": "BA in Psychology",
+          "institution": "UC Berkeley",
+          "year": "2014"
+        }
+      ],
+
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/priyapateldesign",
+        "behance": "https://behance.net/priyapatel"
+      },
+
+      "languages": ["English", "Hindi", "Gujarati"],
+
+      "interests": [
+        "Community organizing",
+        "Yoga",
+        "International development",
+        "Cooking"
+      ],
+
+      "joinDate": "2020-03-15"
+    },
+
+    {
+      "_type": "teamMember",
+      "name": "Jamal Williams",
+      "slug": {
+        "current": "jamal-williams"
+      },
+      "role": "Content Strategist",
+      "department": "content",
+      "displayOrder": 13,
+      "isActive": true,
+      "pronouns": "he/him",
+
+      "shortBio": "Jamal crafts compelling narratives that amplify social impact stories and help organizations communicate their mission authentically.",
+
+      "fullBio": "Jamal Williams is a content strategist at Equity by Design, where he helps nonprofits and social enterprises tell their stories in ways that inspire action and build trust. With a background in journalism and nonprofit communications, Jamal understands how to craft narratives that resonate with diverse audiences.\n\nBefore joining Equity by Design, Jamal worked as a digital editor for a national social justice magazine and managed content strategy for a coalition of environmental organizations. His writing has been published in The Guardian, Medium's Equality collection, and various nonprofit publications.\n\nJamal specializes in plain language writing, SEO for social impact organizations, and creating content that's both accessible and engaging. He's passionate about elevating the voices of communities often excluded from mainstream narratives.\n\nHe holds a BA in Journalism from Northwestern University and has completed advanced training in digital storytelling and accessibility.",
+
+      "expertise": [
+        "Content Strategy",
+        "SEO Writing",
+        "Storytelling",
+        "Plain Language",
+        "Editorial Planning",
+        "Social Media Strategy",
+        "Brand Voice Development"
+      ],
+
+      "quote": "Every story is a chance to shift narratives and challenge power structures. Words matter.",
+
+      "yearsExperience": 7,
+
+      "education": [
+        {
+          "degree": "BA in Journalism",
+          "institution": "Northwestern University",
+          "year": "2016"
+        }
+      ],
+
+      "email": "jamal@equitybydesign.com",
+
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/jamalwilliams",
+        "twitter": "https://twitter.com/jamalwritesgood"
+      },
+
+      "languages": ["English", "Spanish"],
+
+      "interests": [
+        "Investigative journalism",
+        "Poetry",
+        "Urban gardening",
+        "Documentary films"
+      ],
+
+      "joinDate": "2021-01-10"
+    },
+
+    {
+      "_type": "teamMember",
+      "name": "Elena Rodriguez",
+      "slug": {
+        "current": "elena-rodriguez"
+      },
+      "role": "Project Manager",
+      "department": "operations",
+      "displayOrder": 14,
+      "isActive": true,
+      "pronouns": "she/her",
+
+      "shortBio": "Elena keeps projects on track and teams aligned, bringing organized excellence and compassionate leadership to every engagement.",
+
+      "fullBio": "Elena Rodriguez is the project manager at Equity by Design, ensuring that every project runs smoothly from kickoff to launch. With over 10 years of experience in digital project management, Elena excels at balancing client needs, team dynamics, and project constraints.\n\nElena's approach to project management is rooted in transparent communication, proactive problem-solving, and genuine care for both team members and clients. She's skilled at facilitating collaboration across disciplines and managing complex timelines without losing sight of the human element.\n\nPreviously, Elena managed digital transformation projects for Fortune 500 companies and later transitioned to the nonprofit sector, where she found her calling in mission-driven work. She's a certified Scrum Master and Agile practitioner, adapting methodologies to fit the unique needs of social impact projects.\n\nElena holds an MBA from Georgetown University and a BA in Communications from UCLA.",
+
+      "expertise": [
+        "Agile Project Management",
+        "Stakeholder Management",
+        "Budget Planning",
+        "Risk Management",
+        "Team Facilitation",
+        "Client Relations",
+        "Process Optimization"
+      ],
+
+      "quote": "Great projects aren't just delivered on time—they're delivered with care, clarity, and collaboration.",
+
+      "yearsExperience": 10,
+
+      "education": [
+        {
+          "degree": "MBA",
+          "institution": "Georgetown University",
+          "year": "2015"
+        },
+        {
+          "degree": "BA in Communications",
+          "institution": "UCLA",
+          "year": "2011"
+        }
+      ],
+
+      "email": "elena@equitybydesign.com",
+
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/elenarodriguezpm"
+      },
+
+      "languages": ["English", "Spanish"],
+
+      "interests": [
+        "Project management communities",
+        "Salsa dancing",
+        "Travel",
+        "Nonprofit governance"
+      ],
+
+      "joinDate": "2020-09-01"
+    },
+
+    {
+      "_type": "teamMember",
+      "name": "Alex Kim",
+      "slug": {
+        "current": "alex-kim"
+      },
+      "role": "Visual Designer",
+      "department": "design",
+      "displayOrder": 15,
+      "isActive": true,
+      "pronouns": "they/them",
+
+      "shortBio": "Alex creates beautiful, culturally responsive visual systems that celebrate diversity and center accessibility in every design decision.",
+
+      "fullBio": "Alex Kim is a visual designer at Equity by Design, bringing artistic excellence and cultural sensitivity to every project. They specialize in creating brand identities, design systems, and visual content that resonates across diverse communities.\n\nAlex's design approach combines traditional graphic design principles with deep research into cultural symbolism, color psychology, and inclusive representation. They're particularly skilled at creating visual languages that feel authentic to the communities they serve.\n\nBefore joining Equity by Design, Alex worked with immigrant rights organizations, LGBTQ+ nonprofits, and cultural institutions, developing a portfolio of work that celebrates marginalized identities. Their thesis project on decolonizing design education won the AIGA Student Award.\n\nAlex holds an MFA in Graphic Design from RISD and regularly contributes to design publications on topics of representation and equity in visual media.",
+
+      "expertise": [
+        "Brand Identity Design",
+        "Visual Systems",
+        "Typography",
+        "Illustration",
+        "Cultural Design",
+        "Color Theory",
+        "Print & Digital Design"
+      ],
+
+      "quote": "Design has the power to affirm identity and challenge harmful stereotypes. I design for liberation.",
+
+      "yearsExperience": 5,
+
+      "education": [
+        {
+          "degree": "MFA in Graphic Design",
+          "institution": "Rhode Island School of Design (RISD)",
+          "year": "2019"
+        }
+      ],
+
+      "awards": [
+        {
+          "title": "AIGA Student Design Award",
+          "organization": "AIGA",
+          "year": "2019"
+        }
+      ],
+
+      "socialLinks": {
+        "behance": "https://behance.net/alexkim",
+        "instagram": "https://instagram.com/alexdesigns",
+        "website": "https://alexkimdesign.com"
+      },
+
+      "languages": ["English", "Korean"],
+
+      "interests": [
+        "Zine-making",
+        "Queer art collectives",
+        "Analog photography",
+        "Community workshops"
+      ],
+
+      "joinDate": "2021-08-15"
+    }
+  ]
+}
