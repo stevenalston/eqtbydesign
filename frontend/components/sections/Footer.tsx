@@ -142,8 +142,8 @@ export default function Footer() {
               </div>
               <h3 className="font-serif text-2xl mb-4">Join the Movement</h3>
               <p className="text-cream-100 mb-6">
-                Get insights on equity, strategic change, and community impact
-                delivered to your inbox.
+                Stay updated with insights on equity, strategic change, and
+                community impact.
               </p>
               <Button variant="secondary" size="sm" className="w-full">
                 Subscribe
