@@ -76,16 +76,15 @@ export default function CivicEngagement() {
         <motion.div
           className="mb-16"
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
         >
           {/* Service number badge */}
           <motion.div
             className="inline-flex items-center gap-2 bg-terracotta/10 text-terracotta px-4 py-2 rounded-full text-sm font-medium mb-6"
             initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
           >
             <span className="w-6 h-6 rounded-full bg-terracotta text-white flex items-center justify-center text-xs font-bold">1</span>
             Service Area
@@ -108,9 +107,8 @@ export default function CivicEngagement() {
             <motion.div
               className="bg-white rounded-2xl p-8 shadow-soft"
               initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
             >
               <h3 className="font-serif text-lg text-teal mb-6 text-center">The EQT Engagement Model</h3>
               <div className="flex items-center justify-center py-4">
@@ -152,9 +150,8 @@ export default function CivicEngagement() {
                             strokeWidth="2"
                             fill="none"
                             initial={{ pathLength: 0 }}
-                            whileInView={{ pathLength: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1.5, delay: 0.2, ease: "easeInOut" }}
+                            animate={{ pathLength: 1 }}
+                            transition={{ duration: 1.5, delay: 0.7, ease: "easeInOut" }}
                           />
 
                           {/* Animated hexagon outline */}
@@ -165,9 +162,8 @@ export default function CivicEngagement() {
                             strokeDasharray="8 4"
                             fill="none"
                             initial={{ pathLength: 0, opacity: 0 }}
-                            whileInView={{ pathLength: 1, opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 2, delay: 0.5, ease: "easeInOut" }}
+                            animate={{ pathLength: 1, opacity: 1 }}
+                            transition={{ duration: 2, delay: 1.0, ease: "easeInOut" }}
                           />
 
                           {/* Lines from center to each node */}
@@ -182,9 +178,8 @@ export default function CivicEngagement() {
                               strokeWidth="1"
                               strokeDasharray="4 4"
                               initial={{ pathLength: 0, opacity: 0 }}
-                              whileInView={{ pathLength: 1, opacity: 1 }}
-                              viewport={{ once: true }}
-                              transition={{ duration: 0.6, delay: 0.8 + index * 0.1, ease: "easeOut" }}
+                              animate={{ pathLength: 1, opacity: 1 }}
+                              transition={{ duration: 0.6, delay: 1.3 + index * 0.1, ease: "easeOut" }}
                             />
                           ))}
                         </>
@@ -202,9 +197,8 @@ export default function CivicEngagement() {
                       top: '80px',
                     }}
                     initial={{ scale: 0, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3, type: 'spring', stiffness: 200, damping: 15 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: 0.8, type: 'spring', stiffness: 200, damping: 15 }}
                     whileHover={{ scale: 1.1 }}
                   >
                     <span>Listen<br/>Reflect<br/>Respond</span>
@@ -228,9 +222,8 @@ export default function CivicEngagement() {
                           top: `calc(50% + ${y}px - 18px)`,
                         }}
                         initial={{ opacity: 0, scale: 0 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.6 + index * 0.1, type: 'spring', stiffness: 300 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 1.1 + index * 0.1, type: 'spring', stiffness: 300 }}
                         whileHover={{
                           scale: 1.3,
                           borderColor: 'rgba(129, 178, 154, 0.8)',
@@ -275,7 +268,7 @@ export default function CivicEngagement() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
         >
           <h3 className="font-serif text-2xl text-teal mb-8 text-center">
             Six Core Engagement Capabilities

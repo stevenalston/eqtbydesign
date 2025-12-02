@@ -47,7 +47,7 @@ export default function Consulting() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
         >
           {/* Service number badge */}
           <motion.div
@@ -55,6 +55,7 @@ export default function Consulting() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.5 }}
           >
             <span className="w-6 h-6 rounded-full bg-teal text-white flex items-center justify-center text-xs font-bold">2</span>
             Service Area
@@ -80,7 +81,7 @@ export default function Consulting() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
           >
             {consultingServices.map((service, index) => (
               <motion.div
@@ -116,7 +117,7 @@ export default function Consulting() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.6 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
           >
             <div className="bg-gradient-to-br from-teal to-teal-600 rounded-2xl p-8 text-white shadow-lg">
               <div className="text-center mb-8">

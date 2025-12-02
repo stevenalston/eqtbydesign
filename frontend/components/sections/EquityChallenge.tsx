@@ -52,14 +52,37 @@ export default function EquityChallenge() {
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-sage/10 to-transparent" />
 
+      {/* Floating decorative shapes */}
+      <motion.svg
+        className="absolute top-20 left-10 w-20 h-20 text-terracotta/10"
+        viewBox="0 0 100 100"
+        fill="none"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: [0, -10, 0], rotate: [0, 5, 0] }}
+        transition={{ opacity: { delay: 0.5 }, y: { duration: 8, repeat: Infinity }, rotate: { duration: 10, repeat: Infinity } }}
+      >
+        <polygon
+          points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          fill="none"
+        />
+      </motion.svg>
+
+      <motion.div
+        className="absolute bottom-32 right-20 w-12 h-12 rounded-full border-2 border-sage/10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, scale: [1, 1.1, 1] }}
+        transition={{ opacity: { delay: 0.6 }, scale: { duration: 6, repeat: Infinity } }}
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
         >
           <h2 className="font-serif text-display-md text-teal mb-6">
             The Equity Challenge

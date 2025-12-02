@@ -85,7 +85,7 @@ export default function SystemsChange() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
         >
           {/* Service number badge */}
           <motion.div
@@ -93,6 +93,7 @@ export default function SystemsChange() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.5 }}
           >
             <span className="w-6 h-6 rounded-full bg-sage text-white flex items-center justify-center text-xs font-bold">3</span>
             Service Area
@@ -116,7 +117,7 @@ export default function SystemsChange() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
         >
           <h3 className="font-serif text-2xl text-teal mb-8 text-center">Our Process</h3>
           <div className="relative">
@@ -154,7 +155,7 @@ export default function SystemsChange() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
         >
           <h3 className="font-serif text-2xl text-teal mb-8 text-center">
             Systems Change Services

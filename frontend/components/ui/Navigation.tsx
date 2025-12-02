@@ -18,7 +18,7 @@ export default function Navigation() {
     { name: 'Services', href: '/services' },
     { name: 'Our Impact', href: '/impact' },
     { name: 'Team', href: '/team' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Latest', href: '/latest' },
   ]
 
   return (
@@ -68,7 +68,7 @@ export default function Navigation() {
                 </Link>
               </motion.div>
             ))}
-            <Button size="sm" variant="primary" href="/contact">
+            <Button size="sm" variant="primary" href="/contact-us">
               Contact Us
             </Button>
           </div>
@@ -129,7 +129,7 @@ export default function Navigation() {
               {link.name}
             </Link>
           ))}
-          <Button size="sm" variant="primary" className="w-full" href="/contact">
+          <Button size="sm" variant="primary" className="w-full" href="/contact-us">
             Contact Us
           </Button>
         </div>

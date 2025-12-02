@@ -12,7 +12,7 @@ export default function Hero() {
       {/* Noise texture */}
       <div className="absolute inset-0 noise-overlay opacity-50" />
 
-      {/* Floating shapes */}
+      {/* Floating blurred shapes */}
       <motion.div
         className="absolute top-20 left-10 w-64 h-64 bg-terracotta/20 rounded-full blur-3xl"
         animate={{
@@ -37,6 +37,101 @@ export default function Hero() {
           ease: 'easeInOut',
         }}
       />
+
+      {/* Floating hexagonal shapes */}
+      <motion.svg
+        className="absolute top-32 right-20 w-24 h-24 text-white/10"
+        viewBox="0 0 100 100"
+        fill="none"
+        animate={{
+          y: [0, -15, 0],
+          rotate: [0, 10, 0],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+      >
+        <polygon
+          points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          fill="none"
+        />
+      </motion.svg>
+
+      <motion.svg
+        className="absolute bottom-40 left-20 w-20 h-20 text-coral/15"
+        viewBox="0 0 100 100"
+        fill="none"
+        animate={{
+          y: [0, 20, 0],
+          rotate: [0, -15, 0],
+        }}
+        transition={{
+          duration: 15,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+      >
+        <polygon
+          points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          fill="none"
+        />
+      </motion.svg>
+
+      {/* Floating circle outlines */}
+      <motion.div
+        className="absolute top-1/4 left-1/4 w-16 h-16 rounded-full border-2 border-white/10"
+        animate={{
+          scale: [1, 1.1, 1],
+          y: [0, -10, 0],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+      />
+
+      <motion.div
+        className="absolute bottom-1/3 right-1/4 w-12 h-12 rounded-full border border-cream/15"
+        animate={{
+          scale: [1, 0.9, 1],
+          x: [0, 15, 0],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+      />
+
+      {/* Small hexagon near CTA area */}
+      <motion.svg
+        className="absolute top-1/2 right-10 w-12 h-12 text-sage/20"
+        viewBox="0 0 100 100"
+        fill="none"
+        animate={{
+          rotate: [0, 360],
+        }}
+        transition={{
+          duration: 30,
+          repeat: Infinity,
+          ease: 'linear',
+        }}
+      >
+        <polygon
+          points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5"
+          stroke="currentColor"
+          strokeWidth="1"
+          strokeDasharray="8 4"
+          fill="none"
+        />
+      </motion.svg>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
@@ -80,13 +175,30 @@ export default function Hero() {
             and organizational cultural design within government, community, and corporate sectors.
           </motion.p>
 
-          {/* CTAs */}
+          {/* CTAs with decorative accents */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center relative"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
+            {/* Decorative hexagon near primary button */}
+            <motion.svg
+              className="absolute -left-8 top-1/2 -translate-y-1/2 w-6 h-6 text-terracotta/30 hidden sm:block"
+              viewBox="0 0 100 100"
+              fill="none"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.2 }}
+            >
+              <polygon
+                points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5"
+                stroke="currentColor"
+                strokeWidth="2"
+                fill="none"
+              />
+            </motion.svg>
+
             <Button
               size="lg"
               variant="primary"
@@ -113,6 +225,14 @@ export default function Hero() {
             >
               Explore Our Services
             </Button>
+
+            {/* Decorative circle near secondary button */}
+            <motion.div
+              className="absolute -right-6 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full border-2 border-sage/30 hidden sm:block"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.4 }}
+            />
           </motion.div>
 
           {/* Scroll indicator */}
