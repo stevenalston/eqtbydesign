@@ -23,7 +23,7 @@ export default function ContactPage() {
     <main className="min-h-screen">
       <Navigation />
       <ContactHero />
-      <div className="bg-cream">
+      <div className="bg-cream dark:bg-teal-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="grid lg:grid-cols-5 gap-12">
             <div className="lg:col-span-3">

@@ -5,6 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Button from "./Button";
+import { useTheme } from "@/components/providers/ThemeProvider";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,6 +13,8 @@ export default function Navigation() {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const { scrollY } = useScroll();
   const pathname = usePathname();
+  const { resolvedTheme, toggleTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 50);
@@ -33,7 +36,7 @@ export default function Navigation() {
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-soft"
+          ? "bg-white/95 dark:bg-teal-800/95 backdrop-blur-md shadow-soft"
           : "bg-transparent"
       }`}
       initial={{ y: -100 }}
@@ -48,13 +51,13 @@ export default function Navigation() {
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <Link href="/" className="flex items-center space-x-3 group">
-              {/* Hexagon Logo Container */}
-              <div className="relative" style={{ width: '56px', height: '56px' }}>
-                {/* SVG for all hexagon elements */}
+            <Link href="/" className="flex items-center space-x-2 group">
+              {/* Hexagon Logo Container - increased size to prevent node clipping */}
+              <div className="relative" style={{ width: '64px', height: '64px' }}>
+                {/* SVG for all hexagon elements - viewBox expanded to fit nodes */}
                 <svg
                   className="absolute inset-0 w-full h-full"
-                  viewBox="0 0 56 56"
+                  viewBox="0 0 64 64"
                   fill="none"
                 >
                   <defs>
@@ -66,8 +69,8 @@ export default function Navigation() {
 
                   {/* Outer hexagon outline (frame) - larger radius */}
                   {(() => {
-                    const centerX = 28;
-                    const centerY = 28;
+                    const centerX = 32;
+                    const centerY = 32;
                     const outerRadius = 26;
                     const innerRadius = 18;
                     const angles = [0, 60, 120, 180, 240, 300];
@@ -197,11 +200,13 @@ export default function Navigation() {
                 </motion.div>
               </div>
 
-              {/* Brand text - cursive "by design" */}
+              {/* Brand text - geometric "by design" */}
               <div className="relative overflow-hidden">
                 <motion.span
-                  className={`font-cursive text-2xl transition-colors duration-200 ${
-                    isScrolled ? "text-teal group-hover:text-terracotta" : "text-white group-hover:text-coral"
+                  className={`font-sans text-sm font-medium tracking-wide uppercase transition-colors duration-200 ${
+                    isScrolled
+                      ? "text-teal dark:text-cream-100 group-hover:text-terracotta"
+                      : "text-white group-hover:text-coral"
                   }`}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -237,7 +242,7 @@ export default function Navigation() {
                     isActiveLink(link.href)
                       ? "text-terracotta"
                       : isScrolled
-                      ? "text-teal-700 hover:text-terracotta"
+                      ? "text-teal-700 dark:text-cream-200 hover:text-terracotta"
                       : "text-white hover:text-coral"
                   }`}
                 >
@@ -277,14 +282,85 @@ export default function Navigation() {
             <Button size="sm" variant="primary" href="/contact-us">
               Contact Us
             </Button>
+
+            {/* Dark Mode Toggle - Sun/Moon toggle button */}
+            <motion.button
+              onClick={toggleTheme}
+              className={`relative p-2 rounded-full transition-all duration-300 ${
+                isScrolled
+                  ? "bg-teal-100 dark:bg-teal-700 text-teal-700 dark:text-cream-200 hover:bg-teal-200 dark:hover:bg-teal-600"
+                  : "bg-white/10 text-white hover:bg-white/20"
+              }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              <motion.div
+                initial={false}
+                animate={{ rotate: isDark ? 180 : 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
+                {isDark ? (
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                  </svg>
+                ) : (
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                    />
+                  </svg>
+                )}
+              </motion.div>
+            </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-2">
+            {/* Mobile Dark Mode Toggle */}
+            <motion.button
+              onClick={toggleTheme}
+              className={`p-2 rounded-lg transition-colors duration-200 ${
+                isScrolled
+                  ? "text-teal dark:text-cream-200"
+                  : "text-white"
+              }`}
+              whileTap={{ scale: 0.95 }}
+              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              {isDark ? (
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                </svg>
+              ) : (
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                  />
+                </svg>
+              )}
+            </motion.button>
+
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`p-2 rounded-md ${
-                isScrolled ? "text-teal" : "text-white"
+                isScrolled ? "text-teal dark:text-cream-200" : "text-white"
               }`}
               aria-label="Toggle menu"
             >
@@ -317,7 +393,7 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       <motion.div
-        className="md:hidden bg-white shadow-lg"
+        className="md:hidden bg-white dark:bg-teal-800 shadow-lg"
         initial={false}
         animate={{
           height: isMobileMenuOpen ? "auto" : 0,
@@ -339,7 +415,7 @@ export default function Navigation() {
                 className={`block py-2 px-3 rounded-lg font-medium transition-all duration-200 ${
                   isActiveLink(link.href)
                     ? "text-terracotta bg-terracotta/10"
-                    : "text-teal-700 hover:text-terracotta hover:bg-terracotta/5"
+                    : "text-teal-700 dark:text-cream-200 hover:text-terracotta hover:bg-terracotta/5 dark:hover:bg-terracotta/10"
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >

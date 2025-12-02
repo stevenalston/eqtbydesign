@@ -17,7 +17,7 @@ export default function Card({
 }: CardProps) {
   return (
     <motion.div
-      className={`bg-white rounded-xl p-6 shadow-soft ${className}`}
+      className={`bg-white dark:bg-teal-700/50 rounded-xl p-6 shadow-soft dark:shadow-none dark:border dark:border-teal-600 ${className}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}

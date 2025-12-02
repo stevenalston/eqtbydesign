@@ -62,10 +62,10 @@ const engagementCapabilities = [
 
 export default function CivicEngagement() {
   return (
-    <section id="civic-engagement" className="py-24 bg-cream relative overflow-hidden">
+    <section id="civic-engagement" className="py-24 bg-cream dark:bg-teal-900 relative overflow-hidden">
       {/* Background decoration */}
       <motion.div
-        className="absolute top-0 left-0 w-1/3 h-64 bg-gradient-to-r from-sage/10 to-transparent"
+        className="absolute top-0 left-0 w-1/3 h-64 bg-gradient-to-r from-sage/5 dark:from-sage/3 to-transparent"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -92,10 +92,10 @@ export default function CivicEngagement() {
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="font-serif text-display-md text-teal mb-6">
+              <h2 className="font-serif text-display-md text-teal dark:text-cream-100 mb-6">
                 Civic & Public Engagement
               </h2>
-              <p className="text-xl text-teal-700 leading-relaxed">
+              <p className="text-xl text-teal-700 dark:text-cream-200 leading-relaxed">
                 EQT By Design leads in creating inclusive and representative engagement for the public
                 and community at large. We listen, learn, and reach out to ensure voices are lifted
                 regardless of language, culture, zip code, class, status, ability, and/or the
@@ -105,12 +105,12 @@ export default function CivicEngagement() {
 
             {/* Engagement Model Visual */}
             <motion.div
-              className="bg-white rounded-2xl p-8 shadow-soft"
+              className="bg-white dark:bg-teal-700/40 rounded-2xl p-8 shadow-soft dark:shadow-none dark:border dark:border-teal-600"
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >
-              <h3 className="font-serif text-lg text-teal mb-6 text-center">The EQT Engagement Model</h3>
+              <h3 className="font-serif text-lg text-teal dark:text-cream-100 mb-6 text-center">The EQT Engagement Model</h3>
               <div className="flex items-center justify-center py-4">
                 <div className="relative" style={{ width: '240px', height: '240px' }}>
                   {/* SVG for hexagon lines */}
@@ -230,7 +230,7 @@ export default function CivicEngagement() {
                           backgroundColor: 'rgba(129, 178, 154, 0.2)'
                         }}
                       >
-                        <span className="text-teal text-xs font-bold">{index + 1}</span>
+                        <span className="text-teal dark:text-teal text-xs font-bold">{index + 1}</span>
                       </motion.div>
                     );
                   })}
@@ -256,7 +256,7 @@ export default function CivicEngagement() {
                   />
                 </div>
               </div>
-              <p className="text-sm text-teal-600 text-center mt-4">
+              <p className="text-sm text-teal-600 dark:text-cream-300 text-center mt-4">
                 Our hexagonal framework ensures comprehensive community coverage
               </p>
             </motion.div>
@@ -270,7 +270,7 @@ export default function CivicEngagement() {
           viewport={{ once: true }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          <h3 className="font-serif text-2xl text-teal mb-8 text-center">
+          <h3 className="font-serif text-2xl text-teal dark:text-cream-100 mb-8 text-center">
             Six Core Engagement Capabilities
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -292,12 +292,12 @@ export default function CivicEngagement() {
                   </motion.div>
 
                   {/* Title */}
-                  <h4 className="font-serif text-lg text-teal mb-2 group-hover:text-terracotta transition-colors">
+                  <h4 className="font-serif text-lg text-teal dark:text-cream-100 mb-2 group-hover:text-terracotta transition-colors">
                     {capability.title}
                   </h4>
 
                   {/* Description */}
-                  <p className="text-teal-700 text-sm leading-relaxed">
+                  <p className="text-teal-700 dark:text-cream-300 text-sm leading-relaxed">
                     {capability.description}
                   </p>
                 </motion.div>

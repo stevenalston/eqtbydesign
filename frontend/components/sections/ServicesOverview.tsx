@@ -42,12 +42,12 @@ const services = [
 
 export default function ServicesOverview() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 bg-white dark:bg-teal-900 relative overflow-hidden">
       {/* Background decoration */}
       <motion.div
-        className="absolute top-1/3 right-0 w-1/2 h-64 bg-gradient-to-l from-cream-100 to-transparent"
+        className="absolute top-1/3 right-0 w-1/2 h-64 bg-linear-to-l from-cream-100 dark:from-teal-800 to-transparent"
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        whileInView={{ opacity: 0.4 }}
         viewport={{ once: true }}
       />
 
@@ -60,10 +60,10 @@ export default function ServicesOverview() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-serif text-display-md text-teal mb-6">
+          <h2 className="font-serif text-display-md text-teal dark:text-cream-100 mb-6">
             Our Services
           </h2>
-          <p className="text-xl text-teal-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-teal-700 dark:text-cream-200 max-w-3xl mx-auto leading-relaxed">
             EQT By Design brings 25+ years of experience in equity-centered strategic planning,
             change management, and organizational cultural design within government, community,
             and the corporate and nonprofit sectors.
@@ -91,19 +91,19 @@ export default function ServicesOverview() {
                   </motion.div>
 
                   {/* Title */}
-                  <h3 className="font-serif text-xl text-teal mb-3 group-hover:text-terracotta transition-colors">
+                  <h3 className="font-serif text-xl text-teal dark:text-cream-100 mb-3 group-hover:text-terracotta transition-colors">
                     {service.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-teal-700 mb-4 leading-relaxed">
+                  <p className="text-teal-700 dark:text-cream-300 mb-4 leading-relaxed">
                     {service.description}
                   </p>
 
                   {/* Features */}
                   <ul className="space-y-2 mb-4">
                     {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center text-sm text-teal-600">
+                      <li key={feature} className="flex items-center text-sm text-teal-600 dark:text-cream-400">
                         <svg className="w-4 h-4 mr-2 text-sage" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>

@@ -159,12 +159,104 @@ export default function Footer() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             {/* Brand */}
             <div className="md:col-span-1">
-              <Link href="/" className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-warm rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">E</span>
+              <Link href="/" className="flex items-center space-x-2 mb-4 group">
+                {/* Hexagon Logo */}
+                <div className="relative" style={{ width: '48px', height: '48px' }}>
+                  <svg
+                    className="absolute inset-0 w-full h-full"
+                    viewBox="0 0 64 64"
+                    fill="none"
+                  >
+                    <defs>
+                      <linearGradient id="footerHexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#E07A5F" />
+                        <stop offset="100%" stopColor="#F4A261" />
+                      </linearGradient>
+                    </defs>
+                    {(() => {
+                      const centerX = 32;
+                      const centerY = 32;
+                      const outerRadius = 26;
+                      const innerRadius = 18;
+                      const angles = [0, 60, 120, 180, 240, 300];
+
+                      const outerPoints = angles.map((angle) => {
+                        const radians = (angle - 90) * (Math.PI / 180);
+                        return {
+                          x: centerX + Math.cos(radians) * outerRadius,
+                          y: centerY + Math.sin(radians) * outerRadius,
+                        };
+                      });
+
+                      const innerPoints = angles.map((angle) => {
+                        const radians = (angle - 90) * (Math.PI / 180);
+                        return {
+                          x: centerX + Math.cos(radians) * innerRadius,
+                          y: centerY + Math.sin(radians) * innerRadius,
+                        };
+                      });
+
+                      const outerPathD = outerPoints.map((point, i) =>
+                        `${i === 0 ? 'M' : 'L'} ${point.x} ${point.y}`
+                      ).join(' ') + ' Z';
+
+                      const innerPathD = innerPoints.map((point, i) =>
+                        `${i === 0 ? 'M' : 'L'} ${point.x} ${point.y}`
+                      ).join(' ') + ' Z';
+
+                      return (
+                        <>
+                          {/* Outer hexagon */}
+                          <path
+                            d={outerPathD}
+                            className="stroke-white/20"
+                            strokeWidth="1.5"
+                            fill="none"
+                          />
+                          <path
+                            d={outerPathD}
+                            className="stroke-white/30"
+                            strokeWidth="1.5"
+                            strokeDasharray="4 3"
+                            fill="none"
+                          />
+                          {/* Node circles */}
+                          {outerPoints.map((point, index) => (
+                            <circle
+                              key={`footer-node-${index}`}
+                              cx={point.x}
+                              cy={point.y}
+                              r="3"
+                              className="fill-white stroke-white/30"
+                              strokeWidth="1"
+                            />
+                          ))}
+                          {/* Inner hexagon */}
+                          <path
+                            d={innerPathD}
+                            fill="url(#footerHexGradient)"
+                          />
+                          <path
+                            d={innerPathD}
+                            className="stroke-white/50"
+                            strokeWidth="1"
+                            fill="none"
+                          />
+                        </>
+                      );
+                    })()}
+                  </svg>
+                  {/* Center circle with EQT */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
+                      <span className="text-terracotta font-bold text-[8px] tracking-[-0.03em]">
+                        EQT
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <span className="font-serif font-bold text-xl">
-                  Equity by Design
+                <span className="font-sans text-xs font-medium tracking-wide uppercase group-hover:text-coral transition-colors">
+                  by design
                 </span>
               </Link>
               <p className="text-cream-100 text-sm leading-relaxed">

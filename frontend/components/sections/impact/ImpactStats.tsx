@@ -64,7 +64,7 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 
 export default function ImpactStats() {
   return (
-    <section className="py-20 bg-cream relative overflow-hidden">
+    <section className="py-20 bg-cream dark:bg-teal-900 relative overflow-hidden">
       {/* Background decoration - blurred shapes */}
       <div className="absolute inset-0 opacity-50">
         <div className="absolute top-0 right-0 w-96 h-96 bg-sage/10 rounded-full blur-3xl -translate-y-1/2" />
@@ -123,7 +123,7 @@ export default function ImpactStats() {
           <h2 className="font-serif text-display-sm text-teal mb-4">
             Impact by the Numbers
           </h2>
-          <p className="text-teal-700 max-w-2xl mx-auto">
+          <p className="text-teal-700 dark:text-cream-200 max-w-2xl mx-auto">
             Our work speaks through measurable outcomes and lasting change.
           </p>
         </motion.div>
@@ -138,7 +138,7 @@ export default function ImpactStats() {
               transition={{ delay: 0.5 + index * 0.15 }}
             >
               <motion.div
-                className="bg-white rounded-2xl p-6 shadow-soft h-full relative"
+                className="bg-white dark:bg-teal-800 rounded-2xl p-6 shadow-soft dark:shadow-none dark:border dark:border-teal-700 h-full relative"
                 whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
               >
                 {/* Decorative hexagon accent for first stat */}
@@ -173,8 +173,8 @@ export default function ImpactStats() {
                 <div className="font-serif text-display-sm text-terracotta mb-2">
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 </div>
-                <h3 className="font-semibold text-teal mb-1">{stat.label}</h3>
-                <p className="text-sm text-teal-600">{stat.description}</p>
+                <h3 className="font-semibold text-teal dark:text-cream-100 mb-1">{stat.label}</h3>
+                <p className="text-sm text-teal-600 dark:text-cream-400">{stat.description}</p>
               </motion.div>
             </motion.div>
           ))}

@@ -68,7 +68,7 @@ const impacts = [
 
 export default function TeamValues() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 bg-white dark:bg-teal-800 relative overflow-hidden">
       {/* Background decoration */}
       <motion.div
         className="absolute bottom-0 left-0 w-1/2 h-64 bg-gradient-to-r from-cream-100 to-transparent"
@@ -86,10 +86,10 @@ export default function TeamValues() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-serif text-display-md text-teal mb-6">
+          <h2 className="font-serif text-display-md text-teal dark:text-cream-100 mb-6">
             Our Values
           </h2>
-          <p className="text-xl text-teal-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-teal-700 dark:text-cream-200 max-w-3xl mx-auto leading-relaxed">
             The principles that guide our work and define our commitment to equity.
           </p>
         </motion.div>
@@ -121,8 +121,8 @@ export default function TeamValues() {
                 {value.icon}
               </motion.div>
 
-              <h3 className="font-serif text-2xl text-teal mb-4">{value.title}</h3>
-              <p className="text-teal-700 leading-relaxed">{value.content}</p>
+              <h3 className="font-serif text-2xl text-teal dark:text-cream-100 mb-4">{value.title}</h3>
+              <p className="text-teal-700 dark:text-cream-300 leading-relaxed">{value.content}</p>
             </motion.div>
           ))}
         </div>
@@ -134,7 +134,7 @@ export default function TeamValues() {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          <h3 className="font-serif text-2xl text-teal mb-8 text-center">
+          <h3 className="font-serif text-2xl text-teal dark:text-cream-100 mb-8 text-center">
             Our Commitment to Impact
           </h3>
 
@@ -142,7 +142,7 @@ export default function TeamValues() {
             {impacts.map((impact, index) => (
               <motion.div
                 key={impact.title}
-                className="bg-cream rounded-xl p-6"
+                className="bg-cream dark:bg-teal-700/40 dark:border dark:border-teal-600 rounded-xl p-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -153,12 +153,12 @@ export default function TeamValues() {
                   <div className="w-10 h-10 rounded-lg bg-teal/10 flex items-center justify-center text-teal">
                     {impact.icon}
                   </div>
-                  <h4 className="font-serif text-lg text-teal">{impact.title}</h4>
+                  <h4 className="font-serif text-lg text-teal dark:text-cream-100">{impact.title}</h4>
                 </div>
 
                 <ul className="space-y-3">
                   {impact.items.map((item, idx) => (
-                    <li key={idx} className="flex items-start text-sm text-teal-700">
+                    <li key={idx} className="flex items-start text-sm text-teal-700 dark:text-cream-300">
                       <svg className="w-4 h-4 mr-2 text-sage mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>

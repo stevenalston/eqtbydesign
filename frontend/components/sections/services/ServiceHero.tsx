@@ -6,10 +6,10 @@ export default function ServiceHero() {
   return (
     <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-teal via-teal-600 to-sage">
       {/* Animated gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-warm opacity-20 animate-gradient" />
+      <div className="absolute inset-0 bg-gradient-warm opacity-20 animate-gradient dark:opacity-10" />
 
       {/* Noise texture */}
-      <div className="absolute inset-0 noise-overlay opacity-40" />
+      <div className="absolute inset-0 noise-overlay opacity-40 dark:opacity-20" />
 
       {/* Floating shapes */}
       <motion.div

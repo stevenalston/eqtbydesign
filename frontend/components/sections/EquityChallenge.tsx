@@ -41,16 +41,16 @@ function AnimatedStat({ end, label, suffix = '', delay = 0 }: { end: number; lab
       <div className="text-5xl md:text-6xl font-bold text-terracotta mb-2">
         {count}{suffix}
       </div>
-      <div className="text-teal-700 text-lg">{label}</div>
+      <div className="text-teal-700 dark:text-cream-200 text-lg">{label}</div>
     </motion.div>
   )
 }
 
 export default function EquityChallenge() {
   return (
-    <section className="py-24 bg-cream-100 relative overflow-hidden">
+    <section className="py-24 bg-cream-100 dark:bg-teal-800 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-sage/10 to-transparent" />
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-sage/5 dark:from-sage/3 to-transparent" />
 
       {/* Floating decorative shapes */}
       <motion.svg
@@ -84,10 +84,10 @@ export default function EquityChallenge() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          <h2 className="font-serif text-display-md text-teal mb-6">
+          <h2 className="font-serif text-display-md text-teal dark:text-cream-100 mb-6">
             The Equity Challenge
           </h2>
-          <p className="text-xl text-teal-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-teal-700 dark:text-cream-200 max-w-3xl mx-auto leading-relaxed">
             Communities and organizations face systemic barriers to opportunity, resources, and justice.
             Strategic change management has the power to break down these barriers and create pathways to equity.
           </p>
@@ -102,7 +102,7 @@ export default function EquityChallenge() {
 
         {/* Human story section */}
         <motion.div
-          className="bg-white rounded-2xl p-8 md:p-12 shadow-lift"
+          className="bg-white dark:bg-teal-700/40 rounded-2xl p-8 md:p-12 shadow-lift dark:shadow-none dark:border dark:border-teal-600"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -111,15 +111,15 @@ export default function EquityChallenge() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <div className="w-16 h-1 bg-gradient-warm mb-6" />
-              <h3 className="font-serif text-3xl text-teal mb-4">
+              <h3 className="font-serif text-3xl text-teal dark:text-cream-100 mb-4">
                 Strategic Change Can Transform This
               </h3>
-              <p className="text-teal-700 text-lg leading-relaxed mb-6">
+              <p className="text-teal-700 dark:text-cream-300 text-lg leading-relaxed mb-6">
                 Every day, organizations working for justice and equity struggle with
                 processes that don't serve their mission. They need strategic partners who understand
                 their values, amplify community voices, and create inclusive pathways to change.
               </p>
-              <p className="text-teal-700 text-lg leading-relaxed">
+              <p className="text-teal-700 dark:text-cream-300 text-lg leading-relaxed">
                 That's where we come in. We develop strategic solutions that are not just
                 effective, but equitable—built to drive real, measurable systemic transformation.
               </p>

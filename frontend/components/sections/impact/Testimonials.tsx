@@ -22,7 +22,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-cream relative overflow-hidden">
+    <section className="py-24 bg-cream dark:bg-teal-900 relative overflow-hidden">
       {/* Background decoration */}
       <motion.div
         className="absolute top-0 right-0 w-1/2 h-64 bg-gradient-to-l from-sage/10 to-transparent"
@@ -40,10 +40,10 @@ export default function Testimonials() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-serif text-display-md text-teal mb-6">
+          <h2 className="font-serif text-display-md text-teal dark:text-cream-100 mb-6">
             What Our Partners Say
           </h2>
-          <p className="text-xl text-teal-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-teal-700 dark:text-cream-200 max-w-3xl mx-auto leading-relaxed">
             Hear from the organizations we've partnered with to create change.
           </p>
         </motion.div>
@@ -60,23 +60,23 @@ export default function Testimonials() {
               transition={{ delay: index * 0.1 }}
             >
               <motion.div
-                className="bg-white rounded-2xl p-8 shadow-soft h-full flex flex-col"
+                className="bg-white dark:bg-teal-700/40 dark:border dark:border-teal-600 rounded-2xl p-8 shadow-soft h-full flex flex-col"
                 whileHover={{ y: -4 }}
               >
                 {/* Quote icon */}
-                <svg className="w-10 h-10 text-terracotta/20 mb-4" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-10 h-10 text-terracotta/20 dark:text-terracotta/30 mb-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
 
                 {/* Quote text */}
-                <p className="text-teal-700 leading-relaxed mb-6 flex-grow italic">
+                <p className="text-teal-700 dark:text-cream-300 leading-relaxed mb-6 flex-grow italic">
                   "{testimonial.quote}"
                 </p>
 
                 {/* Author */}
-                <div className="pt-4 border-t border-sage/20">
-                  <p className="font-semibold text-teal">{testimonial.author}</p>
-                  <p className="text-sm text-teal-600">{testimonial.organization}</p>
+                <div className="pt-4 border-t border-sage/20 dark:border-teal-600">
+                  <p className="font-semibold text-teal dark:text-cream-100">{testimonial.author}</p>
+                  <p className="text-sm text-teal-600 dark:text-cream-400">{testimonial.organization}</p>
                 </div>
               </motion.div>
             </motion.div>

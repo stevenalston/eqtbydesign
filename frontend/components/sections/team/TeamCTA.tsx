@@ -7,7 +7,7 @@ export default function TeamCTA() {
   return (
     <section className="py-20 bg-gradient-to-br from-teal to-teal-600 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-20 dark:opacity-10">
         <div className="absolute top-0 left-1/4 w-64 h-64 bg-terracotta rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-sage rounded-full blur-3xl" />
       </div>

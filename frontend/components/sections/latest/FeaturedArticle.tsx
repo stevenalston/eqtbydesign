@@ -14,7 +14,7 @@ const featuredArticle = {
 
 export default function FeaturedArticle() {
   return (
-    <section className="py-16 bg-cream relative overflow-hidden">
+    <section className="py-16 bg-cream dark:bg-teal-900 relative overflow-hidden">
       {/* Floating decorative shapes */}
       <motion.svg
         className="absolute top-10 right-10 w-16 h-16 text-terracotta/10"
@@ -89,15 +89,15 @@ export default function FeaturedArticle() {
                 </span>
               </div>
 
-              <h2 className="font-serif text-display-sm text-teal mb-4">
+              <h2 className="font-serif text-display-sm text-teal dark:text-cream-100 mb-4">
                 {featuredArticle.title}
               </h2>
 
-              <p className="text-teal-700 text-lg leading-relaxed mb-6">
+              <p className="text-teal-700 dark:text-cream-300 text-lg leading-relaxed mb-6">
                 {featuredArticle.excerpt}
               </p>
 
-              <div className="flex items-center gap-4 text-sm text-teal-600 mb-6">
+              <div className="flex items-center gap-4 text-sm text-teal-600 dark:text-cream-400 mb-6">
                 <span>By {featuredArticle.author}</span>
                 <span className="w-1 h-1 bg-teal-400 rounded-full" />
                 <span>{featuredArticle.date}</span>

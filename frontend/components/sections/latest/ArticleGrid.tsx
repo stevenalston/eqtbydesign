@@ -58,7 +58,7 @@ const categories = [
 
 export default function ArticleGrid() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 bg-white dark:bg-teal-800 relative overflow-hidden">
       {/* Background decoration */}
       <motion.div
         className="absolute top-1/3 right-0 w-1/3 h-64 bg-gradient-to-l from-cream-100 to-transparent"
@@ -75,7 +75,7 @@ export default function ArticleGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-serif text-display-sm text-teal mb-4 md:mb-0">
+          <h2 className="font-serif text-display-sm text-teal dark:text-cream-100 mb-4 md:mb-0">
             All Articles
           </h2>
 
@@ -126,17 +126,17 @@ export default function ArticleGrid() {
                 </span>
 
                 {/* Title */}
-                <h3 className="font-serif text-lg text-teal mb-2 group-hover:text-terracotta transition-colors">
+                <h3 className="font-serif text-lg text-teal dark:text-cream-100 mb-2 group-hover:text-terracotta transition-colors">
                   {article.title}
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-teal-700 text-sm leading-relaxed mb-4 flex-grow">
+                <p className="text-teal-700 dark:text-cream-300 text-sm leading-relaxed mb-4 flex-grow">
                   {article.excerpt}
                 </p>
 
                 {/* Meta */}
-                <div className="flex items-center gap-3 text-xs text-teal-600 pt-4 border-t border-sage/20">
+                <div className="flex items-center gap-3 text-xs text-teal-600 dark:text-cream-400 pt-4 border-t border-sage/20 dark:border-teal-600">
                   <span>{article.date}</span>
                   <span className="w-1 h-1 bg-teal-400 rounded-full" />
                   <span>{article.readTime}</span>

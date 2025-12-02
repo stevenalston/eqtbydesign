@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Fraunces, Dancing_Script } from 'next/font/google'
+import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import '@/styles/globals.css'
 
 const inter = Inter({
@@ -26,15 +27,33 @@ export const metadata: Metadata = {
   keywords: ['equity design', 'social impact design', 'inclusive design', 'nonprofit web design', 'accessible design'],
 }
 
+// Script to prevent flash of wrong theme
+const themeScript = `
+  (function() {
+    try {
+      const stored = localStorage.getItem('eqt-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored === 'dark' || stored === 'light' ? stored : (prefersDark ? 'dark' : 'light');
+      document.documentElement.classList.add(theme);
+      document.documentElement.style.colorScheme = theme;
+    } catch (e) {}
+  })();
+`;
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${fraunces.variable} ${dancingScript.variable}`}>
+    <html lang="en" className={`${inter.variable} ${fraunces.variable} ${dancingScript.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="font-sans">
-        {children}
+        <ThemeProvider defaultTheme="system" storageKey="eqt-theme">
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

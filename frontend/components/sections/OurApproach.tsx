@@ -48,7 +48,7 @@ const principles = [
 
 export default function OurApproach() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 bg-white dark:bg-teal-900 relative overflow-hidden">
       {/* Background elements */}
       <motion.div
         className="absolute top-1/4 left-0 w-64 h-64 bg-sage/10 rounded-full blur-3xl"
@@ -65,10 +65,10 @@ export default function OurApproach() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-serif text-display-md text-teal mb-6">
+          <h2 className="font-serif text-display-md text-teal dark:text-cream-100 mb-6">
             Our Approach
           </h2>
-          <p className="text-xl text-teal-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-teal-700 dark:text-cream-200 max-w-3xl mx-auto leading-relaxed">
             We combine strategic consulting expertise with deep commitment to equity,
             creating processes and solutions that drive meaningful, lasting change.
           </p>
@@ -86,7 +86,12 @@ export default function OurApproach() {
               >
                 {/* Icon */}
                 <motion.div
-                  className={`w-16 h-16 rounded-xl bg-${principle.color}/10 flex items-center justify-center mb-6 text-${principle.color}`}
+                  className={`w-16 h-16 rounded-xl flex items-center justify-center mb-6 ${
+                    principle.color === 'terracotta' ? 'bg-terracotta/10 text-terracotta' :
+                    principle.color === 'sage' ? 'bg-sage/10 text-sage' :
+                    principle.color === 'teal' ? 'bg-teal/10 text-teal dark:text-teal-300' :
+                    'bg-coral/10 text-coral'
+                  }`}
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                 >
@@ -94,12 +99,12 @@ export default function OurApproach() {
                 </motion.div>
 
                 {/* Title */}
-                <h3 className="font-serif text-2xl text-teal mb-4 group-hover:text-terracotta transition-colors">
+                <h3 className="font-serif text-2xl text-teal dark:text-cream-100 mb-4 group-hover:text-terracotta transition-colors">
                   {principle.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-teal-700 leading-relaxed">
+                <p className="text-teal-700 dark:text-cream-300 leading-relaxed">
                   {principle.description}
                 </p>
 
@@ -126,14 +131,14 @@ export default function OurApproach() {
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          <div className="inline-flex items-center gap-4 text-teal-600">
+          <div className="inline-flex items-center gap-4 text-teal-600 dark:text-cream-400">
             <div className="w-3 h-3 bg-terracotta rounded-full animate-pulse-slow" />
             <div className="h-0.5 w-16 bg-gradient-to-r from-terracotta to-sage" />
             <div className="w-3 h-3 bg-sage rounded-full animate-pulse-slow" />
             <div className="h-0.5 w-16 bg-gradient-to-r from-sage to-teal" />
             <div className="w-3 h-3 bg-teal rounded-full animate-pulse-slow" />
           </div>
-          <p className="mt-4 text-teal-600 text-sm">
+          <p className="mt-4 text-teal-600 dark:text-cream-400 text-sm">
             Integrated thinking for holistic solutions
           </p>
         </motion.div>

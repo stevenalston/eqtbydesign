@@ -42,9 +42,9 @@ const caseStudies = [
 
 export default function FeaturedImpact() {
   return (
-    <section className="py-24 bg-cream-50 relative overflow-hidden">
+    <section className="py-24 bg-cream-50 dark:bg-teal-800 relative overflow-hidden">
       {/* Decorative background */}
-      <div className="absolute inset-0 opacity-40">
+      <div className="absolute inset-0 opacity-30 dark:opacity-20">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-terracotta/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-sage/10 rounded-full blur-3xl" />
       </div>
@@ -58,10 +58,10 @@ export default function FeaturedImpact() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-serif text-display-md text-teal mb-6">
+          <h2 className="font-serif text-display-md text-teal dark:text-cream-100 mb-6">
             Featured Impact
           </h2>
-          <p className="text-xl text-teal-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-teal-700 dark:text-cream-200 max-w-3xl mx-auto leading-relaxed">
             Real engagements. Real results. Real systemic change for communities and organizations that matter.
           </p>
         </motion.div>
@@ -98,10 +98,10 @@ export default function FeaturedImpact() {
                   <div className="text-sm text-terracotta font-medium mb-2">
                     {study.client}
                   </div>
-                  <h3 className="font-serif text-2xl text-teal mb-3 group-hover:text-terracotta transition-colors">
+                  <h3 className="font-serif text-2xl text-teal dark:text-cream-100 mb-3 group-hover:text-terracotta transition-colors">
                     {study.title}
                   </h3>
-                  <p className="text-teal-700 mb-4 leading-relaxed">
+                  <p className="text-teal-700 dark:text-cream-300 mb-4 leading-relaxed">
                     {study.challenge}
                   </p>
 
@@ -110,7 +110,7 @@ export default function FeaturedImpact() {
                     {study.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 bg-cream-100 text-teal-700 text-xs rounded-full"
+                        className="px-3 py-1 bg-cream-100 dark:bg-teal-600/50 text-teal-700 dark:text-cream-200 text-xs rounded-full"
                       >
                         {tag}
                       </span>
@@ -120,7 +120,7 @@ export default function FeaturedImpact() {
 
                 {/* Read more link */}
                 <motion.div
-                  className="flex items-center text-terracotta font-medium mt-auto pt-4 border-t border-cream-200"
+                  className="flex items-center text-terracotta font-medium mt-auto pt-4 border-t border-cream-200 dark:border-teal-600"
                   whileHover={{ x: 5 }}
                 >
                   Read the story
@@ -135,7 +135,7 @@ export default function FeaturedImpact() {
 
         {/* Testimonial */}
         <motion.div
-          className="bg-white rounded-2xl p-8 md:p-12 shadow-lift max-w-4xl mx-auto"
+          className="bg-white dark:bg-teal-700/40 rounded-2xl p-8 md:p-12 shadow-lift dark:shadow-none dark:border dark:border-teal-600 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -146,7 +146,7 @@ export default function FeaturedImpact() {
               <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H8c0-1.1.9-2 2-2V8zm12 0c-3.3 0-6 2.7-6 6v10h10V14h-6c0-1.1.9-2 2-2V8z" />
             </svg>
             <div className="flex-grow">
-              <p className="text-xl text-teal-700 leading-relaxed mb-6 italic">
+              <p className="text-xl text-teal-700 dark:text-cream-200 leading-relaxed mb-6 italic">
                 "Working with EQT By Design transformed not just our processes,
                 but how we think about engaging our community. Their commitment to equity
                 and inclusive facilitation matched our own values perfectly."
@@ -154,8 +154,8 @@ export default function FeaturedImpact() {
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-gradient-warm" />
                 <div>
-                  <div className="font-semibold text-teal">Maria Rodriguez</div>
-                  <div className="text-sm text-teal-600">Director of Community Engagement, City of Metro</div>
+                  <div className="font-semibold text-teal dark:text-cream-100">Maria Rodriguez</div>
+                  <div className="text-sm text-teal-600 dark:text-cream-400">Director of Community Engagement, City of Metro</div>
                 </div>
               </div>
             </div>

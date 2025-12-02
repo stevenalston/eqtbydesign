@@ -31,10 +31,10 @@ const consultingServices = [
 
 export default function Consulting() {
   return (
-    <section id="consulting" className="py-24 bg-white relative overflow-hidden">
+    <section id="consulting" className="py-24 bg-white dark:bg-teal-800 relative overflow-hidden">
       {/* Background decoration */}
       <motion.div
-        className="absolute top-1/4 right-0 w-1/2 h-96 bg-gradient-to-l from-cream-100/50 to-transparent"
+        className="absolute top-1/4 right-0 w-1/2 h-96 bg-gradient-to-l from-cream-100/50 dark:from-teal-700/30 to-transparent"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -62,10 +62,10 @@ export default function Consulting() {
           </motion.div>
 
           <div className="max-w-3xl">
-            <h2 className="font-serif text-display-md text-teal mb-6">
+            <h2 className="font-serif text-display-md text-teal dark:text-cream-100 mb-6">
               Consulting
             </h2>
-            <p className="text-xl text-teal-700 leading-relaxed">
+            <p className="text-xl text-teal-700 dark:text-cream-200 leading-relaxed">
               EQT By Design helps you better understand the context, challenges, and opportunities
               that set the stage for reaching your organizational impact goals for systems change
               that improve strategies for equitable and inclusive design.
@@ -86,7 +86,7 @@ export default function Consulting() {
             {consultingServices.map((service, index) => (
               <motion.div
                 key={service.title}
-                className="group bg-cream/50 hover:bg-cream rounded-xl p-6 transition-all duration-300 cursor-pointer border border-transparent hover:border-sage/20"
+                className="group bg-cream/50 dark:bg-teal-700/30 hover:bg-cream dark:hover:bg-teal-700/50 rounded-xl p-6 transition-all duration-300 cursor-pointer border border-transparent hover:border-sage/20 dark:hover:border-teal-600"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -99,10 +99,10 @@ export default function Consulting() {
                     {index + 1}
                   </span>
                   <div>
-                    <h3 className="font-serif text-lg text-teal mb-2 group-hover:text-terracotta transition-colors">
+                    <h3 className="font-serif text-lg text-teal dark:text-cream-100 mb-2 group-hover:text-terracotta transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-teal-700 text-sm leading-relaxed">
+                    <p className="text-teal-700 dark:text-cream-300 text-sm leading-relaxed">
                       {service.description}
                     </p>
                   </div>

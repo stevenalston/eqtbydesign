@@ -51,7 +51,7 @@ export default function ContactInfo() {
         viewport={{ once: true }}
         transition={{ delay: 0.4, duration: 0.6 }}
       >
-        <h3 className="font-serif text-xl text-teal mb-6">Get in Touch</h3>
+        <h3 className="font-serif text-xl text-teal dark:text-cream-100 mb-6">Get in Touch</h3>
         <div className="space-y-4">
           {contactMethods.map((method, index) => (
             <motion.div
@@ -66,16 +66,16 @@ export default function ContactInfo() {
                 {method.icon}
               </div>
               <div>
-                <p className="text-sm text-teal-600">{method.title}</p>
+                <p className="text-sm text-teal-600 dark:text-cream-400">{method.title}</p>
                 {method.href ? (
                   <a
                     href={method.href}
-                    className="text-teal font-medium hover:text-terracotta transition-colors"
+                    className="text-teal dark:text-cream-100 font-medium hover:text-terracotta transition-colors"
                   >
                     {method.value}
                   </a>
                 ) : (
-                  <p className="text-teal font-medium">{method.value}</p>
+                  <p className="text-teal dark:text-cream-100 font-medium">{method.value}</p>
                 )}
               </div>
             </motion.div>
@@ -90,7 +90,7 @@ export default function ContactInfo() {
         viewport={{ once: true }}
         transition={{ delay: 0.6, duration: 0.6 }}
       >
-        <h3 className="font-serif text-xl text-teal mb-4">Connect With Us</h3>
+        <h3 className="font-serif text-xl text-teal dark:text-cream-100 mb-4">Connect With Us</h3>
         <div className="flex gap-4">
           <a
             href="#"
@@ -120,19 +120,19 @@ export default function ContactInfo() {
         viewport={{ once: true }}
         transition={{ delay: 0.7, duration: 0.6 }}
       >
-        <h3 className="font-serif text-xl text-teal mb-6">Common Questions</h3>
+        <h3 className="font-serif text-xl text-teal dark:text-cream-100 mb-6">Common Questions</h3>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <motion.div
               key={faq.question}
-              className="bg-white rounded-xl p-4 shadow-soft"
+              className="bg-white dark:bg-teal-700/40 dark:border dark:border-teal-600 rounded-xl p-4 shadow-soft"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.8 + index * 0.1, duration: 0.5 }}
             >
-              <h4 className="font-semibold text-teal text-sm mb-2">{faq.question}</h4>
-              <p className="text-teal-600 text-sm">{faq.answer}</p>
+              <h4 className="font-semibold text-teal dark:text-cream-100 text-sm mb-2">{faq.question}</h4>
+              <p className="text-teal-600 dark:text-cream-300 text-sm">{faq.answer}</p>
             </motion.div>
           ))}
         </div>

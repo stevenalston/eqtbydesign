@@ -56,22 +56,22 @@ export default function ContactForm() {
   if (isSubmitted) {
     return (
       <motion.div
-        className="bg-white rounded-2xl p-8 shadow-soft text-center"
+        className="bg-white dark:bg-teal-700/40 dark:border dark:border-teal-600 rounded-2xl p-8 shadow-soft text-center"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
       >
         <motion.div
-          className="w-16 h-16 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-6"
+          className="w-16 h-16 bg-sage/20 dark:bg-sage/30 rounded-full flex items-center justify-center mx-auto mb-6"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
         >
-          <svg className="w-8 h-8 text-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-8 h-8 text-sage dark:text-cream-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </motion.div>
-        <h3 className="font-serif text-2xl text-teal mb-4">Thank You!</h3>
-        <p className="text-teal-700 mb-6">
+        <h3 className="font-serif text-2xl text-teal dark:text-cream-100 mb-4">Thank You!</h3>
+        <p className="text-teal-700 dark:text-cream-300 mb-6">
           We've received your message and will be in touch within 1-2 business days.
         </p>
         <Button
@@ -96,13 +96,13 @@ export default function ContactForm() {
 
   return (
     <motion.div
-      className="bg-white rounded-2xl p-8 shadow-soft"
+      className="bg-white dark:bg-teal-700/40 dark:border dark:border-teal-600 rounded-2xl p-8 shadow-soft"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3, duration: 0.6 }}
     >
-      <h2 className="font-serif text-2xl text-teal mb-2">Project Inquiry</h2>
-      <p className="text-teal-600 mb-8">
+      <h2 className="font-serif text-2xl text-teal dark:text-cream-100 mb-2">Project Inquiry</h2>
+      <p className="text-teal-600 dark:text-cream-300 mb-8">
         Tell us about your goals and we'll reach out to discuss how we can help.
       </p>
 
@@ -110,7 +110,7 @@ export default function ContactForm() {
         {/* Name & Email */}
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-teal mb-2">
+            <label htmlFor="name" className="block text-sm font-medium text-teal dark:text-cream-100 mb-2">
               Your Name *
             </label>
             <input
@@ -120,12 +120,12 @@ export default function ContactForm() {
               required
               value={formState.name}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg border border-sage/30 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 outline-none transition-all text-teal-700"
+              className="w-full px-4 py-3 rounded-lg border border-sage/30 dark:border-teal-600 dark:bg-teal-800 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 outline-none transition-all text-teal-700 dark:text-cream-100"
               placeholder="Jane Smith"
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-teal mb-2">
+            <label htmlFor="email" className="block text-sm font-medium text-teal dark:text-cream-100 mb-2">
               Email Address *
             </label>
             <input
@@ -135,7 +135,7 @@ export default function ContactForm() {
               required
               value={formState.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg border border-sage/30 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 outline-none transition-all text-teal-700"
+              className="w-full px-4 py-3 rounded-lg border border-sage/30 dark:border-teal-600 dark:bg-teal-800 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 outline-none transition-all text-teal-700 dark:text-cream-100"
               placeholder="jane@organization.org"
             />
           </div>
@@ -143,7 +143,7 @@ export default function ContactForm() {
 
         {/* Organization */}
         <div>
-          <label htmlFor="organization" className="block text-sm font-medium text-teal mb-2">
+          <label htmlFor="organization" className="block text-sm font-medium text-teal dark:text-cream-100 mb-2">
             Organization
           </label>
           <input
@@ -152,7 +152,7 @@ export default function ContactForm() {
             name="organization"
             value={formState.organization}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-sage/30 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 outline-none transition-all text-teal-700"
+            className="w-full px-4 py-3 rounded-lg border border-sage/30 dark:border-teal-600 dark:bg-teal-800 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 outline-none transition-all text-teal-700 dark:text-cream-100"
             placeholder="Your organization name"
           />
         </div>
@@ -160,7 +160,7 @@ export default function ContactForm() {
         {/* Organization Type & Service Interest */}
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="organizationType" className="block text-sm font-medium text-teal mb-2">
+            <label htmlFor="organizationType" className="block text-sm font-medium text-teal dark:text-cream-100 mb-2">
               Organization Type
             </label>
             <select
@@ -168,7 +168,7 @@ export default function ContactForm() {
               name="organizationType"
               value={formState.organizationType}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg border border-sage/30 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 outline-none transition-all text-teal-700 bg-white"
+              className="w-full px-4 py-3 rounded-lg border border-sage/30 dark:border-teal-600 dark:bg-teal-800 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 outline-none transition-all text-teal-700 dark:text-cream-100 bg-white dark:bg-teal-800"
             >
               <option value="">Select type...</option>
               {organizationTypes.map(type => (
@@ -177,7 +177,7 @@ export default function ContactForm() {
             </select>
           </div>
           <div>
-            <label htmlFor="serviceInterest" className="block text-sm font-medium text-teal mb-2">
+            <label htmlFor="serviceInterest" className="block text-sm font-medium text-teal dark:text-cream-100 mb-2">
               Service Interest
             </label>
             <select
@@ -185,7 +185,7 @@ export default function ContactForm() {
               name="serviceInterest"
               value={formState.serviceInterest}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg border border-sage/30 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 outline-none transition-all text-teal-700 bg-white"
+              className="w-full px-4 py-3 rounded-lg border border-sage/30 dark:border-teal-600 dark:bg-teal-800 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 outline-none transition-all text-teal-700 dark:text-cream-100 bg-white dark:bg-teal-800"
             >
               <option value="">Select service...</option>
               {serviceInterests.map(service => (
@@ -197,7 +197,7 @@ export default function ContactForm() {
 
         {/* Message */}
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-teal mb-2">
+          <label htmlFor="message" className="block text-sm font-medium text-teal dark:text-cream-100 mb-2">
             Tell us about your goals *
           </label>
           <textarea
@@ -207,7 +207,7 @@ export default function ContactForm() {
             rows={5}
             value={formState.message}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-sage/30 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 outline-none transition-all text-teal-700 resize-none"
+            className="w-full px-4 py-3 rounded-lg border border-sage/30 dark:border-teal-600 dark:bg-teal-800 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 outline-none transition-all text-teal-700 dark:text-cream-100 resize-none"
             placeholder="What challenges are you facing? What outcomes are you hoping to achieve?"
           />
         </div>
@@ -235,7 +235,7 @@ export default function ContactForm() {
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </Button>
 
-        <p className="text-xs text-teal-600 text-center">
+        <p className="text-xs text-teal-600 dark:text-cream-400 text-center">
           We typically respond within 1-2 business days.
         </p>
       </form>

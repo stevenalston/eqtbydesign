@@ -47,9 +47,9 @@ const approachPillars = [
 
 export default function ServicesApproach() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 bg-white dark:bg-teal-800 relative overflow-hidden">
       {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 dark:opacity-10">
         <div className="absolute inset-0" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, #3D5A80 1px, transparent 0)`,
           backgroundSize: '40px 40px',
@@ -65,10 +65,10 @@ export default function ServicesApproach() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-serif text-display-md text-teal mb-6">
+          <h2 className="font-serif text-display-md text-teal dark:text-cream-100 mb-6">
             Our Approach
           </h2>
-          <p className="text-xl text-teal-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-teal-700 dark:text-cream-200 max-w-3xl mx-auto leading-relaxed">
             At the core of all our services is a commitment to principles that guide
             everything we do — ensuring that equity isn't just a goal, but a practice.
           </p>
@@ -103,10 +103,10 @@ export default function ServicesApproach() {
                 </motion.div>
 
                 {/* Content */}
-                <h3 className="font-serif text-2xl text-teal mb-3 group-hover:text-terracotta transition-colors">
+                <h3 className="font-serif text-2xl text-teal dark:text-cream-100 mb-3 group-hover:text-terracotta transition-colors">
                   {pillar.title}
                 </h3>
-                <p className="text-teal-700 leading-relaxed">
+                <p className="text-teal-700 dark:text-cream-300 leading-relaxed">
                   {pillar.description}
                 </p>
 
@@ -126,8 +126,8 @@ export default function ServicesApproach() {
           transition={{ delay: 0.4 }}
         >
           <blockquote className="relative">
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 text-6xl text-terracotta/20 font-serif">"</div>
-            <p className="font-serif text-2xl md:text-3xl text-teal italic max-w-4xl mx-auto leading-relaxed">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 text-6xl text-terracotta/20 dark:text-terracotta/10 font-serif">"</div>
+            <p className="font-serif text-2xl md:text-3xl text-teal dark:text-cream-100 italic max-w-4xl mx-auto leading-relaxed">
               Design thinking for inclusive, equitable, people-centered outcomes
             </p>
           </blockquote>

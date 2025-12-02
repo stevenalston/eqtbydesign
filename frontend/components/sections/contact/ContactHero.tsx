@@ -6,10 +6,10 @@ export default function ContactHero() {
   return (
     <section className="relative pt-32 pb-16 overflow-hidden bg-gradient-to-br from-teal via-teal-600 to-sage">
       {/* Animated gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-warm opacity-20 animate-gradient" />
+      <div className="absolute inset-0 bg-gradient-warm opacity-20 animate-gradient dark:opacity-10" />
 
       {/* Noise texture */}
-      <div className="absolute inset-0 noise-overlay opacity-30" />
+      <div className="absolute inset-0 noise-overlay opacity-30 dark:opacity-15" />
 
       {/* Floating shapes */}
       <motion.div

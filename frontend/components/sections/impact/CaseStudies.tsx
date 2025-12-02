@@ -82,7 +82,7 @@ const caseStudies = [
 
 export default function CaseStudies() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 bg-white dark:bg-teal-800 relative overflow-hidden">
       {/* Background decorative shapes */}
       <motion.svg
         className="absolute top-20 right-10 w-24 h-24 text-terracotta/5"
@@ -131,12 +131,12 @@ export default function CaseStudies() {
         >
           <div className="flex items-center justify-center gap-4 mb-6">
             <HexagonOutline size="sm" color="terracotta" className="opacity-30" />
-            <h2 className="font-serif text-display-md text-teal">
+            <h2 className="font-serif text-display-md text-teal dark:text-cream-100">
               Featured Projects
             </h2>
             <HexagonOutline size="sm" color="sage" className="opacity-30" />
           </div>
-          <p className="text-xl text-teal-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-teal-700 dark:text-cream-200 max-w-3xl mx-auto leading-relaxed">
             Real stories of transformation across Madison and beyond. See how we've partnered
             with communities to create meaningful, systemic change.
           </p>
@@ -174,20 +174,20 @@ export default function CaseStudies() {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-serif text-xl text-teal mb-3 group-hover:text-terracotta transition-colors">
+                <h3 className="font-serif text-xl text-teal dark:text-cream-100 mb-3 group-hover:text-terracotta transition-colors">
                   {study.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-teal-700 text-sm leading-relaxed mb-4">
+                <p className="text-teal-700 dark:text-cream-300 text-sm leading-relaxed mb-4">
                   {study.description}
                 </p>
 
                 {/* Two columns: Outcomes & Highlights */}
                 <div className="grid md:grid-cols-2 gap-4 flex-grow">
                   {/* Key Outcomes */}
-                  <div className="pt-4 border-t border-sage/20">
-                    <h4 className="text-xs font-semibold text-teal uppercase tracking-wide mb-3 flex items-center gap-2">
+                  <div className="pt-4 border-t border-sage/20 dark:border-teal-600">
+                    <h4 className="text-xs font-semibold text-teal dark:text-cream-100 uppercase tracking-wide mb-3 flex items-center gap-2">
                       <svg className="w-4 h-4 text-terracotta" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
@@ -195,7 +195,7 @@ export default function CaseStudies() {
                     </h4>
                     <ul className="space-y-2">
                       {study.outcomes.slice(0, 3).map((outcome, idx) => (
-                        <li key={idx} className="flex items-start text-xs text-teal-600">
+                        <li key={idx} className="flex items-start text-xs text-teal-600 dark:text-cream-300">
                           <span className="w-1.5 h-1.5 rounded-full bg-terracotta mt-1.5 mr-2 flex-shrink-0" />
                           {outcome}
                         </li>
@@ -204,8 +204,8 @@ export default function CaseStudies() {
                   </div>
 
                   {/* By the Numbers */}
-                  <div className="pt-4 border-t border-sage/20">
-                    <h4 className="text-xs font-semibold text-teal uppercase tracking-wide mb-3 flex items-center gap-2">
+                  <div className="pt-4 border-t border-sage/20 dark:border-teal-600">
+                    <h4 className="text-xs font-semibold text-teal dark:text-cream-100 uppercase tracking-wide mb-3 flex items-center gap-2">
                       <svg className="w-4 h-4 text-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                       </svg>
@@ -213,7 +213,7 @@ export default function CaseStudies() {
                     </h4>
                     <ul className="space-y-2">
                       {study.highlights.slice(0, 3).map((highlight, idx) => (
-                        <li key={idx} className="flex items-start text-xs text-teal-600">
+                        <li key={idx} className="flex items-start text-xs text-teal-600 dark:text-cream-300">
                           <span className="w-1.5 h-1.5 rounded-full bg-sage mt-1.5 mr-2 flex-shrink-0" />
                           {highlight}
                         </li>

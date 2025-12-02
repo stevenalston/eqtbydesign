@@ -101,7 +101,7 @@ export default function TeamMembers() {
   const otherMembers = teamMembers.filter(m => !m.featured)
 
   return (
-    <section className="py-24 bg-cream relative overflow-hidden">
+    <section className="py-24 bg-cream dark:bg-teal-900 relative overflow-hidden">
       {/* Background decoration */}
       <motion.div
         className="absolute top-0 right-0 w-1/3 h-64 bg-gradient-to-l from-sage/10 to-transparent"
@@ -198,26 +198,26 @@ export default function TeamMembers() {
                   Leadership
                 </div>
 
-                <h2 className="font-serif text-display-sm text-teal mb-2">
+                <h2 className="font-serif text-display-sm text-teal dark:text-cream-100 mb-2">
                   {founderMember.name}
                 </h2>
-                <p className="text-terracotta font-medium text-lg mb-4">
+                <p className="text-terracotta dark:text-coral font-medium text-lg mb-4">
                   {founderMember.role}
                 </p>
-                <p className="text-teal-600 text-sm mb-6 italic">
+                <p className="text-teal-600 dark:text-cream-400 text-sm mb-6 italic">
                   {founderMember.subtitle}
                 </p>
 
-                <p className="text-teal-700 leading-relaxed mb-6">
+                <p className="text-teal-700 dark:text-cream-300 leading-relaxed mb-6">
                   {founderMember.bio}
                 </p>
 
                 {founderMember.credentials && (
                   <div>
-                    <h4 className="text-teal font-semibold mb-3">Credentials</h4>
+                    <h4 className="text-teal dark:text-cream-100 font-semibold mb-3">Credentials</h4>
                     <ul className="space-y-2">
                       {founderMember.credentials.map((credential, idx) => (
-                        <li key={idx} className="flex items-start text-sm text-teal-600">
+                        <li key={idx} className="flex items-start text-sm text-teal-600 dark:text-cream-400">
                           <svg className="w-4 h-4 mr-2 text-sage mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
@@ -239,7 +239,7 @@ export default function TeamMembers() {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          <h3 className="font-serif text-2xl text-teal mb-8 text-center">
+          <h3 className="font-serif text-2xl text-teal dark:text-cream-100 mb-8 text-center">
             Our Consultants & Partners
           </h3>
 
@@ -263,15 +263,15 @@ export default function TeamMembers() {
                   </motion.div>
 
                   {/* Name & Role */}
-                  <h4 className="font-serif text-lg text-teal mb-1 group-hover:text-terracotta transition-colors">
+                  <h4 className="font-serif text-lg text-teal dark:text-cream-100 mb-1 group-hover:text-terracotta transition-colors">
                     {member.name}
                   </h4>
-                  <p className="text-terracotta text-sm font-medium mb-3">
+                  <p className="text-terracotta dark:text-coral text-sm font-medium mb-3">
                     {member.role}
                   </p>
 
                   {/* Bio */}
-                  <p className="text-teal-700 text-sm leading-relaxed mb-4 flex-grow">
+                  <p className="text-teal-700 dark:text-cream-300 text-sm leading-relaxed mb-4 flex-grow">
                     {member.bio}
                   </p>
 
@@ -279,7 +279,7 @@ export default function TeamMembers() {
                   {member.credentials && (
                     <ul className="space-y-1 pt-4 border-t border-sage/20">
                       {member.credentials.slice(0, 2).map((credential, idx) => (
-                        <li key={idx} className="flex items-center text-xs text-teal-600">
+                        <li key={idx} className="flex items-center text-xs text-teal-600 dark:text-cream-400">
                           <svg className="w-3 h-3 mr-2 text-sage flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>

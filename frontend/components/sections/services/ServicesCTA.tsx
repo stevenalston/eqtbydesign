@@ -7,7 +7,7 @@ export default function ServicesCTA() {
   return (
     <section className="py-24 bg-gradient-to-br from-teal via-teal-600 to-sage relative overflow-hidden">
       {/* Background decorations */}
-      <div className="absolute inset-0 noise-overlay opacity-30" />
+      <div className="absolute inset-0 noise-overlay opacity-30 dark:opacity-15" />
       <motion.div
         className="absolute top-10 left-10 w-64 h-64 bg-terracotta/20 rounded-full blur-3xl"
         animate={{

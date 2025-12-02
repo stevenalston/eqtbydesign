@@ -69,10 +69,10 @@ const processSteps = [
 
 export default function SystemsChange() {
   return (
-    <section id="systems-change" className="py-24 bg-cream relative overflow-hidden">
+    <section id="systems-change" className="py-24 bg-cream dark:bg-teal-900 relative overflow-hidden">
       {/* Background decoration */}
       <motion.div
-        className="absolute bottom-0 left-0 w-1/2 h-96 bg-gradient-to-t from-sage/10 to-transparent"
+        className="absolute bottom-0 left-0 w-1/2 h-96 bg-gradient-to-t from-sage/5 dark:from-sage/3 to-transparent"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -100,10 +100,10 @@ export default function SystemsChange() {
           </motion.div>
 
           <div className="max-w-3xl">
-            <h2 className="font-serif text-display-md text-teal mb-6">
+            <h2 className="font-serif text-display-md text-teal dark:text-cream-100 mb-6">
               Systems Change & Equitable Design
             </h2>
-            <p className="text-xl text-teal-700 leading-relaxed">
+            <p className="text-xl text-teal-700 dark:text-cream-200 leading-relaxed">
               EQT By Design works with you to develop smart, inclusive processes that support your
               community and organizational goals. We partner with you to create lasting, systemic
               transformation that centers equity in every decision.
@@ -119,7 +119,7 @@ export default function SystemsChange() {
           viewport={{ once: true }}
           transition={{ delay: 0.5, duration: 0.6 }}
         >
-          <h3 className="font-serif text-2xl text-teal mb-8 text-center">Our Process</h3>
+          <h3 className="font-serif text-2xl text-teal dark:text-cream-100 mb-8 text-center">Our Process</h3>
           <div className="relative">
             {/* Timeline line */}
             <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-terracotta via-coral to-sage transform -translate-y-1/2" />
@@ -136,14 +136,14 @@ export default function SystemsChange() {
                 >
                   {/* Step circle */}
                   <motion.div
-                    className="relative z-10 w-16 h-16 mx-auto mb-4 rounded-full bg-white shadow-md flex items-center justify-center border-4 border-terracotta"
+                    className="relative z-10 w-16 h-16 mx-auto mb-4 rounded-full bg-white dark:bg-teal-700 shadow-md flex items-center justify-center border-4 border-terracotta"
                     whileHover={{ scale: 1.1, rotate: 10 }}
                     transition={{ type: 'spring', stiffness: 400 }}
                   >
                     <span className="text-2xl font-bold text-terracotta">{step.step}</span>
                   </motion.div>
-                  <h4 className="font-serif text-lg text-teal mb-2">{step.title}</h4>
-                  <p className="text-teal-700 text-sm">{step.description}</p>
+                  <h4 className="font-serif text-lg text-teal dark:text-cream-100 mb-2">{step.title}</h4>
+                  <p className="text-teal-700 dark:text-cream-300 text-sm">{step.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -157,7 +157,7 @@ export default function SystemsChange() {
           viewport={{ once: true }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          <h3 className="font-serif text-2xl text-teal mb-8 text-center">
+          <h3 className="font-serif text-2xl text-teal dark:text-cream-100 mb-8 text-center">
             Systems Change Services
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -179,12 +179,12 @@ export default function SystemsChange() {
                   </motion.div>
 
                   {/* Title */}
-                  <h4 className="font-serif text-lg text-teal mb-2 group-hover:text-terracotta transition-colors">
+                  <h4 className="font-serif text-lg text-teal dark:text-cream-100 mb-2 group-hover:text-terracotta transition-colors">
                     {service.title}
                   </h4>
 
                   {/* Description */}
-                  <p className="text-teal-700 text-sm leading-relaxed">
+                  <p className="text-teal-700 dark:text-cream-300 text-sm leading-relaxed">
                     {service.description}
                   </p>
                 </motion.div>
