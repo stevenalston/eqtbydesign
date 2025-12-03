@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Card from '@/components/ui/Card'
 
 const teamMembers = [
@@ -15,6 +16,8 @@ const teamMembers = [
       'Certified in International Association of Public Participation (IAP2)',
       'Certificate by Anima Deep Diversity',
     ],
+    image: '/images/annette-miller.png',
+    imageOffset: -20,
     featured: true,
   },
   {
@@ -26,6 +29,8 @@ const teamMembers = [
       'Spanish Conversation Lead',
       'Community Facilitation Expert',
     ],
+    image: '/images/mathias-lemos.png',
+    imageOffset: 0,
     featured: false,
   },
   {
@@ -37,6 +42,9 @@ const teamMembers = [
       'Founder, Center for Inclusive and Engaged Leadership',
       'Co-founder, Institute for Collective Wellbeing',
     ],
+    image: '/images/stephan-hiroshi-gilchrist.png',
+    imageOffset: 0,
+    imageOffsetX: -35,
     featured: false,
   },
   {
@@ -48,6 +56,8 @@ const teamMembers = [
       'Policy Research & Writing Expert',
       'Communications Consultant',
     ],
+    image: '/images/matthew-braunginn.png',
+    imageOffset: -30,
     featured: false,
   },
   {
@@ -59,6 +69,8 @@ const teamMembers = [
       'L.L.M Human Rights, Conflict & Justice (SOAS London)',
       'Empathy 4 Equity Consultant',
     ],
+    image: '/images/naman-siad.png',
+    imageOffset: 0,
     featured: false,
   },
   {
@@ -70,6 +82,8 @@ const teamMembers = [
       'Technology Integration Specialist',
       'Project Management Professional',
     ],
+    image: '/images/jennifer-smith.png',
+    imageOffset: 0,
     featured: false,
   },
   {
@@ -81,6 +95,8 @@ const teamMembers = [
       'Rescue Desk Virtual Assistant Services',
       'Operations & Design Support',
     ],
+    image: '/images/catherine-barrance.png',
+    imageOffset: -25,
     featured: false,
   },
   {
@@ -92,6 +108,8 @@ const teamMembers = [
       'CX Strategy Expert',
       'Voice of Customer Analysis',
     ],
+    image: '/images/sarah-zepnick.png',
+    imageOffset: 0,
     featured: false,
   },
 ]
@@ -104,7 +122,7 @@ export default function TeamMembers() {
     <section className="py-24 bg-cream dark:bg-teal-900 relative overflow-hidden">
       {/* Background decoration */}
       <motion.div
-        className="absolute top-0 right-0 w-1/3 h-64 bg-gradient-to-l from-sage/10 to-transparent"
+        className="absolute top-0 right-0 w-1/3 h-64 bg-linear-to-l from-sage/10 to-transparent"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -168,17 +186,34 @@ export default function TeamMembers() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5, duration: 0.6 }}
               >
-                <div className="aspect-[4/5] bg-gradient-to-br from-terracotta/20 to-sage/20 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                <div className="aspect-[4/5] bg-gradient-to-br from-terracotta/20 to-sage/20 rounded-2xl relative overflow-hidden">
                   {/* Decorative elements */}
-                  <div className="absolute top-4 right-4 w-20 h-20 bg-terracotta/30 rounded-full blur-xl" />
-                  <div className="absolute bottom-4 left-4 w-16 h-16 bg-sage/30 rounded-full blur-xl" />
+                  <div className="absolute top-4 right-4 w-20 h-20 bg-terracotta/30 rounded-full blur-xl z-10" />
+                  <div className="absolute bottom-4 left-4 w-16 h-16 bg-sage/30 rounded-full blur-xl z-10" />
 
-                  <div className="text-center p-8">
-                    <div className="w-32 h-32 bg-gradient-warm rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-white font-serif text-4xl font-bold">AM</span>
+                  {founderMember.image ? (
+                    <Image
+                      src={founderMember.image}
+                      alt={founderMember.name}
+                      fill
+                      className="object-cover"
+                      style={{
+                        objectPosition: `center ${50 + (founderMember.imageOffset || 0)}%`
+                      }}
+                      priority
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center p-8">
+                        <div className="w-32 h-32 bg-gradient-warm rounded-full mx-auto mb-4 flex items-center justify-center">
+                          <span className="text-white font-serif text-4xl font-bold">
+                            {founderMember.name.split(' ').map(n => n[0]).join('')}
+                          </span>
+                        </div>
+                        <p className="text-teal-600 text-sm">Photo coming soon</p>
+                      </div>
                     </div>
-                    <p className="text-teal-600 text-sm">Photo coming soon</p>
-                  </div>
+                  )}
                 </div>
 
                 {/* Accent shape */}
@@ -253,13 +288,25 @@ export default function TeamMembers() {
                   transition={{ delay: index * 0.05 }}
                   className="h-full flex flex-col"
                 >
-                  {/* Avatar placeholder */}
+                  {/* Avatar */}
                   <motion.div
-                    className="w-16 h-16 rounded-full bg-gradient-to-br from-sage/30 to-terracotta/30 flex items-center justify-center mb-4 text-teal font-serif font-bold text-lg"
+                    className="w-16 h-16 rounded-full bg-gradient-to-br from-sage/30 to-terracotta/30 flex items-center justify-center mb-4 text-teal font-serif font-bold text-lg overflow-hidden relative"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                   >
-                    {member.name.split(' ').map(n => n[0]).join('')}
+                    {member.image ? (
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover"
+                        style={{
+                          objectPosition: `${50 + (member.imageOffsetX || 0)}% ${50 + (member.imageOffset || 0)}%`
+                        }}
+                      />
+                    ) : (
+                      member.name.split(' ').map(n => n[0]).join('')
+                    )}
                   </motion.div>
 
                   {/* Name & Role */}

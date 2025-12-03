@@ -4,12 +4,12 @@ import { motion } from 'framer-motion'
 
 export default function ContactHero() {
   return (
-    <section className="relative pt-32 pb-16 overflow-hidden bg-gradient-to-br from-teal via-teal-600 to-sage">
+    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-linear-to-br from-teal via-teal-600 to-sage">
       {/* Animated gradient overlay */}
       <div className="absolute inset-0 bg-gradient-warm opacity-20 animate-gradient dark:opacity-10" />
 
       {/* Noise texture */}
-      <div className="absolute inset-0 noise-overlay opacity-30 dark:opacity-15" />
+      <div className="absolute inset-0 noise-overlay opacity-40 dark:opacity-20" />
 
       {/* Floating shapes */}
       <motion.div
@@ -37,12 +37,12 @@ export default function ContactHero() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
         <motion.div
-          className="text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           {/* Eyebrow */}
           <motion.p
@@ -51,22 +51,26 @@ export default function ContactHero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            Let's Create Change Together
+            Contact Us
           </motion.p>
 
           {/* Main headline */}
           <motion.h1
-            className="font-serif text-display-lg text-white mb-8 leading-tight"
+            className="font-serif text-display-lg text-white mb-6 leading-tight text-shadow-md"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Start a Conversation
+            Let's Create Change
+            <br />
+            <span className="gradient-text bg-linear-to-r from-coral via-cream to-sage bg-clip-text text-transparent">
+              Together
+            </span>
           </motion.h1>
 
           {/* Subheadline */}
           <motion.p
-            className="text-xl md:text-2xl text-cream-100 mb-4 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-cream-100 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}

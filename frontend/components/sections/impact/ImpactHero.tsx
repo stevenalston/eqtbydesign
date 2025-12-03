@@ -4,12 +4,12 @@ import { motion } from 'framer-motion'
 
 export default function ImpactHero() {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-teal via-teal-600 to-sage">
+    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-linear-to-br from-teal via-teal-600 to-sage">
       {/* Animated gradient overlay */}
       <div className="absolute inset-0 bg-gradient-warm opacity-20 animate-gradient dark:opacity-10" />
 
       {/* Noise texture */}
-      <div className="absolute inset-0 noise-overlay opacity-30 dark:opacity-15" />
+      <div className="absolute inset-0 noise-overlay opacity-40 dark:opacity-20" />
 
       {/* Floating shapes */}
       <motion.div
@@ -37,12 +37,12 @@ export default function ImpactHero() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
         <motion.div
-          className="text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           {/* Eyebrow */}
           <motion.p
@@ -51,22 +51,26 @@ export default function ImpactHero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            Measurable Change, Lasting Results
+            Our Impact
           </motion.p>
 
           {/* Main headline */}
           <motion.h1
-            className="font-serif text-display-lg text-white mb-8 leading-tight"
+            className="font-serif text-display-lg text-white mb-6 leading-tight text-shadow-md"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Our Impact
+            Measurable Change
+            <br />
+            <span className="gradient-text bg-linear-to-r from-coral via-cream to-sage bg-clip-text text-transparent">
+              Lasting Results
+            </span>
           </motion.h1>
 
           {/* Subheadline */}
           <motion.p
-            className="text-xl md:text-2xl text-cream-100 mb-8 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-cream-100 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
@@ -74,23 +78,6 @@ export default function ImpactHero() {
             25+ years of creating systemic change across government, nonprofit,
             and corporate sectors. Here's how we've helped organizations transform.
           </motion.p>
-
-          {/* Scroll indicator */}
-          <motion.div
-            className="mt-12"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-          >
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-              <svg className="w-6 h-6 mx-auto text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </motion.div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
