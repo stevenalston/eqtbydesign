@@ -47,11 +47,11 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div
-            className="flex-shrink-0"
+            className="shrink-0"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <Link href="/" className="flex items-center space-x-2 group">
+            <Link href="/" className="flex items-center group">
               {/* Hexagon Logo Container - increased size to prevent node clipping */}
               <div className="relative" style={{ width: '64px', height: '64px' }}>
                 {/* SVG for all hexagon elements - viewBox expanded to fit nodes */}
